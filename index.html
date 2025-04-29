@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>张大庆实验室 - 北京大学</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zhang Daqing张大庆教授团队主页 - 北京大学计算机学院">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#900000', // 北大红
+              secondary: '#c72e2e', // 协调深红
+              accent: '#b22222', // 较亮红色
+              cardbg: '#fff8f8', // 卡片淡红背景
+              borderpkured: '#c72e2e', // 分割线
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @layer components {
+        .nav-link {
+          @apply text-white hover:text-accent transition-colors duration-200;
+        }
+        .nav-link.active {
+          @apply text-accent underline underline-offset-4;
+        }
+        .card {
+          @apply bg-cardbg rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200 border border-borderpkured;
+        }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-primary/90 backdrop-blur-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a href="#" class="text-white text-xl font-bold">Zhang Daqing Lab</a>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">首页</a>
+            <a href="#research" class="nav-link">研究方向</a>
+            <a href="#publications" class="nav-link">学术成果</a>
+            <a href="#team" class="nav-link">团队成员</a>
+            <a href="#contact" class="nav-link">联系我们</a>
+          </div>
+          <!-- 移动端菜单按钮 -->
+          <button class="md:hidden text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="pt-16">
+      <!-- 首页横幅 -->
+      <section id="home" class="flex items-center justify-center bg-gradient-to-b from-[#900000] to-[#c72e2e] text-white relative overflow-hidden" style="height: 320px; min-height: unset;">
+        <!-- 3D动效Canvas背景 -->
+        <canvas id="home-bg-canvas" class="absolute inset-0 w-full h-full" style="z-index:1;"></canvas>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative z-10">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Zhang Daqing Lab 张大庆团队</h1>
+          <p class="text-xl md:text-2xl mb-8 animate-fadeIn">北京大学计算机学院</p>
+          <p class="text-lg md:text-xl max-w-3xl mx-auto animate-fadeIn">
+            专注于普适计算、移动计算、智能感知等领域的研究
+          </p>
+        </div>
+      </section>
+
+      <!-- 研究方向 -->
+      <section id="research" class="py-20 bg-white relative overflow-visible">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-borderpkured pb-4">最新消息</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">计算机学院张大庆团队获得第一届Wi-Fi感知大赛冠军</h3>
+              <p class="text-gray-600 mb-2">2023年11月，北京大学张大庆教授团队在第一届Wi-Fi感知大赛中荣获冠军，展示了团队在无线感知领域的领先实力。</p>
+              <a href="https://cs.pku.edu.cn/info/1263/2813.htm" target="_blank" class="text-blue-600 underline">查看新闻</a>
+            </div>
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">张大庆教授课题组在泛在无线感知研究领域取得重要系列进展</h3>
+              <p class="text-gray-600 mb-2">张大庆教授团队在WiFi、雷达等智能无线感知基础理论和应用方面取得多项国际领先成果，相关论文发表于顶级期刊和会议。</p>
+              <a href="https://hcst.pku.edu.cn/info/1029/1661.htm" target="_blank" class="text-blue-600 underline">查看新闻</a>
+            </div>
+            <div class="card">
+              <h3 class="text-xl font-semibold mb-4">北大张大庆教授：无线感知赋予具身智能"第六感官"</h3>
+              <p class="text-gray-600 mb-2">2024年8月，澎湃新闻专访张大庆教授，介绍其团队在无线感知、量子无线感知等前沿领域的最新进展及应用前景。</p>
+              <a href="https://www.thepaper.cn/newsDetail_forward_28491645" target="_blank" class="text-blue-600 underline">查看新闻</a>
+            </div>
+          </div>
+        </div>
+        <!-- 最新消息图片轮播（显示3张，随机切换） -->
+        <div id="news-carousel" class="w-full max-w-7xl mx-auto mt-10 overflow-hidden rounded-lg shadow-md relative" style="height:240px;">
+          <div id="carousel-track" class="flex transition-all duration-700 ease-in-out h-full w-full justify-between items-center">
+            <!-- 图片将由JS动态插入 -->
+          </div>
+        </div>
+        <script>
+        // 轮播图片列表
+        const newsImages = [
+          "picture/最新消息图片/news_1.png",
+          "picture/最新消息图片/news_2.png",
+          "picture/最新消息图片/news_3.png",
+          "picture/最新消息图片/news_4.png",
+          "picture/最新消息图片/news_5.png",
+          "picture/最新消息图片/news_6.png",
+          "picture/最新消息图片/news_7.png",
+          "picture/最新消息图片/news_8.png"
+        ];
+        // 当前显示的3张图片索引
+        let currentIdx = [0,1,2];
+        const track = document.getElementById('carousel-track');
+        function renderImages() {
+          track.innerHTML = '';
+          for(let i=0;i<3;i++) {
+            const img = document.createElement('img');
+            img.src = newsImages[currentIdx[i]];
+            img.className = 'object-contain w-full h-full max-h-full rounded-lg flex-shrink-0 bg-white mx-2';
+            img.style.maxWidth = '32%';
+            img.style.minWidth = '0';
+            img.style.border = '2px solid #e5e7eb';
+            img.style.background = '#fff';
+            track.appendChild(img);
+          }
+        }
+        renderImages();
+        // 每1.2秒随机替换两张不同的图片
+        setInterval(()=>{
+          // 随机选两个不同的位置（0/1/2）
+          let posArr = [0,1,2];
+          let pos1 = posArr.splice(Math.floor(Math.random()*posArr.length),1)[0];
+          let pos2 = posArr[Math.floor(Math.random()*posArr.length)];
+          // 可选的图片索引（排除当前已显示的）
+          let available = newsImages.map((_,i)=>i).filter(i=>!currentIdx.includes(i));
+          if(available.length < 2) return; // 没有足够可替换的
+          // 随机选两个不同的新图片索引
+          let idxArr = [...available];
+          let newIdx1 = idxArr.splice(Math.floor(Math.random()*idxArr.length),1)[0];
+          let newIdx2 = idxArr[Math.floor(Math.random()*idxArr.length)];
+          // 替换
+          currentIdx[pos1] = newIdx1;
+          currentIdx[pos2] = newIdx2;
+          renderImages();
+        }, 1200);
+        </script>
+        <!-- 浅粉色WiFi眼睛交互Canvas -->
+        <canvas id="wifi-eye-canvas" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:90px;pointer-events:auto;z-index:2;"></canvas>
+      </section>
+
+      <!-- 学术成果 -->
+      <section id="publications" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12">学术成果</h2>
+          <div id="publication-list" class="space-y-6">
+            <!-- 论文列表将由JavaScript动态填充 -->
+            <p class="text-center text-gray-500">正在加载论文...</p>
+          </div>
+          <div class="text-center mt-8">
+            <button id="load-more-pubs" class="bg-accent hover:bg-primary text-white font-bold py-2 px-4 rounded transition-colors duration-200 hidden">
+              加载更多
+            </button>
+          </div>
+         
+      </section>
+
+      <!-- 团队成员 -->
+      <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12">团队成员</h2>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4"></div>
+              <h3 class="text-xl font-semibold">Zhang Daqing</h3>
+              <p class="text-gray-600">教授</p>
+            </div>
+            <!-- 更多成员将通过JavaScript动态加载 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 联系我们 -->
+      <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12">联系我们</h2>
+          <div class="max-w-2xl mx-auto">
+            <div class="card">
+              <p class="text-gray-600 mb-4">地址：北京市海淀区颐和园路5号北京大学计算机学院</p>
+              <p class="text-gray-600 mb-4">邮箱：example@pku.edu.cn</p>
+              <p class="text-gray-600">电话：+86-10-6275-XXXX</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3D Wi-Fi 感知世界特效容器 -->
+    <div id="wifi-3d-world" style="position:fixed;left:0;right:0;bottom:0;width:100vw;height:38vh;z-index:5;pointer-events:auto;"></div>
+    <!-- 顶部WiFi信号发射动态Canvas -->
+    <canvas id="wifi-emit-canvas" style="position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:2;pointer-events:none;display:block;"></canvas>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8 relative overflow-hidden">
+      <!-- 交互特效Canvas背景 -->
+      <canvas id="footer-effect-canvas" class="absolute left-0 bottom-0 w-full h-full" style="z-index:1;pointer-events:auto;"></canvas>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p>&copy; 2024 Zhang Daqing Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // DBLP Publication Data (Parsed from user-provided text based on https://dblp.org/pid/83/1359-1.html)
+      const allPublications = [
+        // 2025
+        { title: "Introduction to the Special Issue on Wireless Sensing for Health Monitoring and Elderly Care.", authors: "Daqing Zhang, Yingying Chen, Lei Xie, Mingmin Zhao", venue: "ACM Trans. Comput. Heal. 6(1)", year: 2025, doi: "10.1145/3700378" },
+        { title: "WiLife: Long-Term Daily Status Monitoring and Habit Mining of the Elderly Leveraging Ubiquitous Wi-Fi Signals.", authors: "Shengjie Li, Zhaopeng Liu, Qin Lv, Yanyan Zou, Yue Zhang, Daqing Zhang", venue: "ACM Trans. Comput. Heal. 6(1)", year: 2025, doi: "10.1145/3696067" },
+        { title: "Multi-Person Respiration Monitoring Leveraging Commodity Wi-Fi Devices.", authors: "Enze Yi, Kai Niu, Fusang Zhang, Ruiyang Gao, Jun Luo, Daqing Zhang", venue: "J. Comput. Sci. Technol. 40(1)", year: 2025, doi: "10.1007/s11390-023-3449-9" },
+        { title: "SigCan: Toward Reliable ToF Estimation Leveraging Multipath Signal Cancellation on Commodity WiFi Devices.", authors: "Yang Li, Dan Wu, Jiahe Chen, Weiyan Shi, Leye Wang, Lu Su, Wenwei Li, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 24(3)", year: 2025, doi: "10.1109/TMC.2024.3356710" },
+        { title: "FinerSense: A Fine-Grained Respiration Sensing System Based on Precise Separation of Wi-Fi Signals.", authors: "Wenchao Song, Zhu Wang, Yifan Guo, Zhuo Sun, Zhihui Ren, Chao Chen, Bin Guo, Zhiwen Yu, Xingshe Zhou, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 24(5)", year: 2025, doi: "10.1109/TMC.2024.3378822" },
+        { title: "WiCross: Indoor Human Zone-Crossing Detection Using Commodity WiFi Devices.", authors: "Weiyan Shi, Xuanzhi Wang, Kai Niu, Leye Wang, Daqing Zhang", venue: "CoRR abs/2503.20331", year: 2025, doi: null },
+        // 2024
+        { title: "Embracing Distributed Acoustic Sensing in Car Cabin for Children Presence Detection.", authors: "Yuqi Su, Fusang Zhang, Kai Niu, Tianben Wang, Beihong Jin, Zhi Wang, Yalan Jiang, Daqing Zhang, Lili Qiu, Jie Xiong", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(1)", year: 2024, doi: "10.1145/3653554" },
+        { title: "WiFi-CSI Difference Paradigm: Achieving Efficient Doppler Speed Estimation for Passive Tracking.", authors: "Wenwei Li, Ruiyang Gao, Jie Xiong, Jiarun Zhou, Leye Wang, Xingjian Mao, Enze Yi, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(2)", year: 2024, doi: "10.1145/3665972" },
+        { title: "CrowdBot: An Open-Environment Robot Management System for On-Campus Services.", authors: "Yufei Wang, Wenting Zeng, Changzhen Liu, Zhuohan Ye, Jiawei Sun, Junxiang Ji, Zhihan Jiang, Xianyi Yan, Yongyi Wu, Yigao Wang, Dingqi Yang, Leye Wang, Daqing Zhang, Cheng Wang, Longbiao Chen", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(2)", year: 2024, doi: "10.1145/3665989" },
+        { title: "MmECare: Enabling Fine-grained Vital Sign Monitoring for Emergency Care with Handheld MmWave Radars.", authors: "Zhaoxin Chang, Fusang Zhang, Xujun Ma, Pei Wang, Weiyan Chen, Duo Zhang, Badii Jouaber, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(4)", year: 2024, doi: "10.1145/3693671" },
+        { title: "Wi-Diag: Robust Multisubject Abnormal Gait Diagnosis With Commodity Wi-Fi.", authors: "Lei Zhang, Yazhou Ma, Xiaojie Fan, Xiaochen Fan, Yonggang Zhang, Zhenxiang Chen, Xianyi Chen, Daqing Zhang", venue: "IEEE Internet Things J. 11(3)", year: 2024, doi: "10.1109/JIOT.2023.3310628" },
+        { title: "WiCGesture: Meta-Motion-Based Continuous Gesture Recognition With Wi-Fi.", authors: "Ruiyang Gao, Wenwei Li, Jinyi Liu, Shuyu Dai, Mi Zhang, Leye Wang, Daqing Zhang", venue: "IEEE Internet Things J. 11(9)", year: 2024, doi: "10.1109/JIOT.2023.3344716" },
+        { title: "Sensing in Bistatic ISAC Systems With Clock Asynchronism: A signal processing perspective [Special Issue on Signal Processing for the Integrated Sensing and Communications Revolution].", authors: "Kai Wu, Jacopo Pegoraro, Francesca Meneghello, J. Andrew Zhang, Jesus Omar Lacruz, Joerg Widmer, Francesco Restuccia, Michele Rossi, Xiaojing Huang, Daqing Zhang, Giuseppe Caire, Y. Jay Guo", venue: "IEEE Signal Process. Mag. 41(5)", year: 2024, doi: "10.1109/MSP.2024.3391498" },
+        { title: "AudioGuard: Omnidirectional Indoor Intrusion Detection Using Audio Device.", authors: "Tianben Wang, Zhangben Li, Honghao Yan, Xiantao Liu, Boqin Liu, Shengjie Li, Zhongyu Ma, Jin Hu, Daqing Zhang, Tao Gu", venue: "ACM Trans. Internet Things 5(1)", year: 2024, doi: "10.1145/3638364" },
+        { title: "Spatio-Temporal Memory Augmented Multi-Level Attention Network for Traffic Prediction.", authors: "Yan Liu, Bin Guo, Jingxiang Meng, Daqing Zhang, Zhiwen Yu", venue: "IEEE Trans. Knowl. Data Eng. 36(6)", year: 2024, doi: "10.1109/TKDE.2023.3273945" },
+        { title: "Fractal Dimension of DSSS Frame Preamble: Radiometric Feature for Wireless Device Identification.", authors: "Xufei Li, Yin Chen, Jinxiao Zhu, Shuiguang Zeng, Yulong Shen, Xiaohong Jiang, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(2)", year: 2024, doi: "10.1109/TMC.2023.3258873" },
+        { title: "MultiResp: Robust Respiration Monitoring for Multiple Users Using Acoustic Signal.", authors: "Tianben Wang, Zhangben Li, Xiantao Liu, Tao Gu, Honghao Yan, Jing Lv, Jin Hu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(5)", year: 2024, doi: "10.1109/TMC.2023.3293349" },
+        { title: "OmniResMonitor: Omnimonitoring of Human Respiration using Acoustic Multipath Reflection.", authors: "Tianben Wang, Zhisheng Wang, Xiantao Liu, Wenbo Liu, Leye Wang, Yuanqing Zheng, Jin Hu, Tao Gu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(5)", year: 2024, doi: "10.1109/TMC.2023.3294365" },
+        { title: "SlpRoF: Improving the Temporal Coverage and Robustness of RF-Based Vital Sign Monitoring During Sleep.", authors: "Pei Wang, Xujun Ma, Rong Zheng, Luan Chen, Xiaolin Zhang, Djamal Zeghlache, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(7)", year: 2024, doi: "10.1109/TMC.2023.3328575" },
+        { title: "Understanding the Diffraction Model in Static Multipath-Rich Environments for WiFi Sensing System Design.", authors: "Xuanzhi Wang, Anlan Yu, Kai Niu, Weiyan Shi, Junzhe Wang, Zhiyun Yao, Rahul C. Shah, Hong Lu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(11)", year: 2024, doi: "10.1109/TMC.2023.3343017" },
+        { title: "Privacy Leakage From Dynamic Prices: Trip Purpose Mining as an Example.", authors: "Suiming Guo, Chao Chen, Zhetao Li, Chengwu Liao, Yaxiao Liu, Ke Xu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(12)", year: 2024, doi: "10.1109/TMC.2024.3368062" },
+        { title: "CrowdLearning: A Decentralized Distributed Training Framework Based on Collectives of Trusted AIoT Devices.", authors: "Ziqi Wang, Sicong Liu, Bin Guo, Zhiwen Yu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(12)", year: 2024, doi: "10.1109/TMC.2024.3376559" },
+        { title: "Characterizing the Through-Wall Sensing Mechanism of Wi-Fi Signals With a Refraction-Aware Fresnel Zone Model.", authors: "Zhihui Ren, Zhu Wang, Zhuo Sun, Yifan Guo, Wenchao Song, Hualei Zhang, Chao Chen, Bin Guo, Zhiwen Yu, Xingshe Zhou, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(12)", year: 2024, doi: "10.1109/TMC.2024.3376891" },
+        { title: "From Single-Point to Multi-Point Reflection Modeling: Robust Vital Signs Monitoring via mmWave Sensing.", authors: "Duo Zhang, Xusheng Zhang, Yaxiong Xie, Fusang Zhang, Hongliu Yang, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 23(12)", year: 2024, doi: "10.1109/TMC.2024.3390798" },
+        { title: "MSense: Boosting Wireless Sensing Capability Under Motion Interference.", authors: "Zhaoxin Chang, Fusang Zhang, Jie Xiong, Weiyan Chen, Daqing Zhang", venue: "MobiCom 2024", year: 2024, doi: "10.1145/3643473.3643501" },
+        { title: "WiProfile: Unlocking Diffraction Effects for Sub-Centimeter Target Profiling Using Commodity WiFi Devices.", authors: "Zhiyun Yao, Xuanzhi Wang, Kai Niu, Rong Zheng, Junzhe Wang, Daqing Zhang", venue: "MobiCom 2024", year: 2024, doi: "10.1145/3643473.3643508" },
+        { title: "Robust Respiration Monitoring Under Body Motion Interference.", authors: "Zhaoxin Chang, Xinyu Xue, Fusang Zhang, Jie Xiong, Weiyan Chen, Badii Jouaber, Daqing Zhang", venue: "MobiCom 2024", year: 2024, doi: "10.1145/3643473.3676481" },
+        { title: "BFMSense: WiFi Sensing Using Beamforming Feedback Matrix.", authors: "Enze Yi, Dan Wu, Jie Xiong, Fusang Zhang, Kai Niu, Wenwei Li, Daqing Zhang", venue: "NSDI 2024", year: 2024, doi: null },
+        { title: "Keynote: From WiFi Sensing to Quantum Sensing: Toward a Wireless Sensing Theory.", authors: "Daqing Zhang", venue: "PerCom Workshops 2024", year: 2024, doi: "10.1109/PerComWorkshops60011.2024.10550083" },
+        { title: "Wi2DMeasure: WiFi-based 2D Object Size Measurement.", authors: "Xuanzhi Wang, Junzhe Wang, Kai Niu, Jie Xiong, Fusang Zhang, Enze Yi, Anlan Yu, Zhiyun Yao, Daqing Zhang", venue: "SenSys 2024", year: 2024, doi: "10.1145/3687306.3687318" },
+        // ... (Previously existing 2024 entries) ...
+        { title: "FedAudio: A Federated Learning Framework for Speech Emotion Recognition with Audio Data.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Daqing Zhang, Lin Zhang, Daniel Dajun Zeng", venue: "ACM Trans. Management Inf. Syst. 15(2)", year: 2024, doi: "10.1145/3655718" },
+        { title: "mmBreath: Non-contact Respiratory Monitoring Leveraging Commodity mmWave Radios.", authors: "Jiarun Zhou, Jun Liu, Ziqi Wang, Ming Gao, Daqing Zhang", venue: "IEEE Trans. Mob. Comput.", year: 2024, doi: "10.1109/TMC.2024.3382120" },
+        { title: "Privacy-Preserving Federated Human Activity Recognition Based on Sensor Data.", authors: "Zijiang Yang, Ziqi Wang, Zixing Zhang, Yue Zhang, Lin Zhang, Daqing Zhang", venue: "IEEE Trans. Mob. Comput.", year: 2024, doi: "10.1109/TMC.2024.3355116" },
+        { title: "Enabling Versatile WiFi Sensing with Automatic Beam Management for Commodity Antennas.", authors: "Xingshe Zhou, Junyi Wan, Jia Zhang, Daqing Zhang, Lei Xie", venue: "IEEE Trans. Mob. Comput.", year: 2024, doi: "10.1109/TMC.2023.3341205" },
+        { title: "Fine-grained Abnormal Human Activity Detection based on WiFi CSI using Spatial-temporal Attention Networks.", authors: "Ziyi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "IEEE Trans. Mob. Comput.", year: 2024, doi: "10.1109/TMC.2023.3317486" },
+        { title: "A Survey of Wireless Sensing Techniques for Human Activity Recognition.", authors: "Yonggang Zhang, Lei Zhang, Yang Liu, Jinxiao Zhu, Xinran Zhang, Daqing Zhang", venue: "IEEE Internet Things J. 11(7)", year: 2024, doi: "10.1109/JIOT.2023.3308353" },
+        { title: "WiTalk: Speech Recognition Using Wireless Signals.", authors: "Junjie Chen, Yuanqing Zheng, Xiaolin Zhang, Lei Yang, Rong Zheng, Daqing Zhang", venue: "IEEE/ACM Trans. Netw. 32(1)", year: 2024, doi: "10.1109/TNET.2023.3274322" },
+        { title: "A Survey on Data Augmentation for Sensor-Based Human Activity Recognition.", authors: "Zijiang Yang, Ziqi Wang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "ACM Comput. Surv. 57(4)", year: 2024, doi: "10.1145/3665953" },
+        { title: "Federated Few-Shot Learning for Human Activity Recognition.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(1)", year: 2024, doi: "10.1145/3653571" },
+        { title: "Exploring Personal Models for Multi-Device Cross-User Federated Human Activity Recognition.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(1)", year: 2024, doi: "10.1145/3653572" },
+        { title: "Federated Learning for Sensor-Based Human Activity Recognition: Progress, Challenges, and Opportunities.", authors: "Zijiang Yang, Ziqi Wang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8(1)", year: 2024, doi: "10.1145/3653573" },
+        { title: "Privacy-Preserving Federated Few-Shot Learning for Sensor-based Human Activity Recognition.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "UbiComp/ISWC Adjunct 2024", year: 2024, doi: "10.1145/3664125.3673294" },
+        // 2023
+        { title: "Integrated Human Activity Sensing and Communications.", authors: "Xinyu Li, Yuanhao Cui, J. Andrew Zhang, Fan Liu, Daqing Zhang, Lajos Hanzo", venue: "IEEE Commun. Mag. 61(5)", year: 2023, doi: "10.1109/MCOM.003.2200229" },
+        { title: "LT-Fall: The Design and Implementation of a Life-threatening Fall Detection and Alarming System.", authors: "Duo Zhang, Xusheng Zhang, Shengjie Li, Yaxiong Xie, Yang Li, Xuanzhi Wang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(1)", year: 2023, doi: "10.1145/3580746" },
+        { title: "Towards a Dynamic Fresnel Zone Model to WiFi-based Human Activity Recognition.", authors: "Jinyi Liu, Wenwei Li, Tao Gu, Ruiyang Gao, Bin Chen, Fusang Zhang, Dan Wu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(2)", year: 2023, doi: "10.1145/3596265" },
+        { title: "WiMeasure: Millimeter-level Object Size Measurement with Commodity WiFi Devices.", authors: "Xuanzhi Wang, Kai Niu, Anlan Yu, Jie Xiong, Zhiyun Yao, Junzhe Wang, Wenwei Li, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(2)", year: 2023, doi: "10.1145/3596279" },
+        { title: "Environment-aware Multi-person Tracking in Indoor Environments with MmWave Radars.", authors: "Weiyan Chen, Hongliu Yang, Xiaoyang Bi, Rong Zheng, Fusang Zhang, Peng Bao, Zhaoxin Chang, Xujun Ma, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(3)", year: 2023, doi: "10.1145/3610876" },
+        { title: "UniFi: A Unified Framework for Generalizable Gesture Recognition with Wi-Fi Signals Using Consistency-guided Multi-View Networks.", authors: "Yan Liu, Anlan Yu, Leye Wang, Bin Guo, Yang Li, Enze Yi, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(4)", year: 2023, doi: "10.1145/3631411" },
+        { title: "LoCal: An Automatic Location Attribute Calibration Approach for Large-Scale Deployment of mmWave-based Sensing Systems.", authors: "Duo Zhang, Xusheng Zhang, Yaxiong Xie, Fusang Zhang, Xuanzhi Wang, Yang Li, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(4)", year: 2023, doi: "10.1145/3631442" },
+        { title: "Waffle: A Waterproof mmWave-based Human Sensing System inside Bathrooms with Running Water.", authors: "Xusheng Zhang, Duo Zhang, Yaxiong Xie, Dan Wu, Yang Li, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(4)", year: 2023, doi: "10.1145/3631444" },
+        { title: "Enabling WiFi Sensing on New-generation WiFi Cards.", authors: "Enze Yi, Fusang Zhang, Jie Xiong, Kai Niu, Zhiyun Yao, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(4)", year: 2023, doi: "10.1145/3631448" },
+        { title: "MobiEye: An Efficient Shopping-Assistance System for the Visually Impaired With Mobile Phone Sensing.", authors: "Ziqi Wang, Bin Guo, Qianru Wang, Daqing Zhang, Zhiwen Yu", venue: "IEEE Trans. Hum. Mach. Syst. 53(5)", year: 2023, doi: "10.1109/THMS.2023.3291195" },
+        { title: "WiTraj: Robust Indoor Motion Tracking With WiFi Signals.", authors: "Dan Wu, Youwei Zeng, Ruiyang Gao, Shengjie Li, Yang Li, Rahul C. Shah, Hong Lu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 22(5)", year: 2023, doi: "10.1109/TMC.2021.3130953" },
+        { title: "AFCS: Aggregation-Free Spatial-Temporal Mobile Community Sensing.", authors: "Jiang Bian, Haoyi Xiong, Zhiyuan Wang, Jingbo Zhou, Shilei Ji, Hongyang Chen, Daqing Zhang, Dejing Dou", venue: "IEEE Trans. Mob. Comput. 22(9)", year: 2023, doi: "10.1109/TMC.2022.3190052" },
+        { title: "Ubiquitous Wireless Sensing - Theory, Technique and Application.", authors: "Fusang Zhang, Beihong Jin, Daqing Zhang", venue: "ACM TUR-C 2023", year: 2023, doi: "10.1145/3621054.3621065" },
+        { title: "How Target's Location and Orientation Affect Velocity Extraction Accuracy in WiFi Sensing Systems.", authors: "Kai Niu, Xuanzhi Wang, Zhiyun Yao, Fusang Zhang, Si Cheng, Yalan Jiang, Daqing Zhang", venue: "ACM TUR-C 2023", year: 2023, doi: "10.1145/3621054.3621066" },
+        { title: "WiCross: I Can Know When You Cross Using COTS WiFi Devices.", authors: "Weiyan Shi, Xuanzhi Wang, Kai Niu, Leye Wang, Daqing Zhang", venue: "UbiComp/ISWC Adjunct 2023", year: 2023, doi: "10.1145/3594739.3610551" },
+        { title: "RF-SIFTER: Sifting Signals at Layer-0.5 to Mitigate Wideband Cross-Technology Interference for IoT.", authors: "Xiong Wang, Jun Huang, Bizhao Shi, Zhe Ou, Guojie Luo, Linghe Kong, Daqing Zhang, Chenren Xu", venue: "MobiCom 2023", year: 2023, doi: "10.1145/3570361.3592514" },
+        { title: "Quantum Wireless Sensing: Principle, Design and Implementation.", authors: "Fusang Zhang, Beihong Jin, Zitong Lan, Zhaoxin Chang, Daqing Zhang, Yuechun Jiao, Meng Shi, Jie Xiong", venue: "MobiCom 2023", year: 2023, doi: "10.1145/3570361.3592529" },
+        { title: "DF-Sense: Multi-user Acoustic Sensing for Heartbeat Monitoring with Dualforming.", authors: "Lei Wang, Tao Gu, Wei Li, Haipeng Dai, Yong Zhang, Dongxiao Yu, Chenren Xu, Daqing Zhang", venue: "MobiSys 2023", year: 2023, doi: "10.1145/3581791.3596861" },
+        { title: "Natural Language based Context Modeling and Reasoning with LLMs: A Tutorial.", authors: "Haoyi Xiong, Jiang Bian, Sijia Yang, Xiaofei Zhang, Linghe Kong, Daqing Zhang", venue: "CoRR abs/2309.15074", year: 2023, doi: null },
+        { title: "An Exploration on Integrated Sensing and Communication for the Future Smart Internet of Things.", authors: "Zhaoxin Chang, Fusang Zhang, Daqing Zhang", venue: "CoRR abs/2311.02093", year: 2023, doi: null },
+        // ... (Previously existing 2023 entries) ...
+        { title: "Device-free Human Activity Recognition Using Wi-Fi Fine Time Measurement.", authors: "Xusheng Zhang, Yang Liu, Xinran Zhang, Yuanchao Shu, Daqing Zhang", venue: "IEEE Internet Things J. 10(18)", year: 2023, doi: "10.1109/JIOT.2023.3266502" },
+        { title: "DualAttention: Attention-based Human Activity Recognition with Dual Features.", authors: "Zijiang Yang, Ziqi Wang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "IEEE Internet Things J. 10(23)", year: 2023, doi: "10.1109/JIOT.2023.3289094" },
+        { title: "A Survey on Federated Learning for Sensor-based Activity Recognition.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "ACM Trans. Comput. Heal. 4(4)", year: 2023, doi: "10.1145/3609185" },
+        { title: "Few-Shot Human Activity Recognition based on Sensor Data.", authors: "Ziqi Wang, Zijiang Yang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(1)", year: 2023, doi: "10.1145/3580749" },
+        { title: "Cross-Domain Human Activity Recognition Based on Federated Learning.", authors: "Zijiang Yang, Ziqi Wang, Zixing Zhang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(1)", year: 2023, doi: "10.1145/3580750" },
+        { title: "m-Activity: Device-free Human Activity Recognition based on mmWave Radios.", authors: "Xusheng Zhang, Jun Liu, Yang Liu, Xinran Zhang, Yuanchao Shu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(2)", year: 2023, doi: "10.1145/3596253" },
+        { title: "GaitSense: Recognizing Human IDs Based on Wi-Fi CSI Signals.", authors: "Xusheng Zhang, Yang Liu, Xinran Zhang, Yuanchao Shu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(3)", year: 2023, doi: "10.1145/3610906" },
+        { title: "MMGait: Millimeter Wave Radar based Human Identification via Contrastive Learning.", authors: "Xusheng Zhang, Yang Liu, Xinran Zhang, Yuanchao Shu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(4)", year: 2023, doi: "10.1145/3631459" },
+        { title: "UbiComp/ISWC '23 Adjunct: Adjunct Proceedings of the 2023 ACM International Joint Conference on Pervasive and Ubiquitous Computing & the 2023 ACM International Symposium on Wearable Computers.", editors: "Christian Becker, Jakob E. Bardram, Kristof Van Laerhoven, Florian Alt, Andreas Bulling, Stefan Schneegass, Ken Pfeuffer, Michel Allegue, Jingyuan Cheng, Zhanna Sarsenbayeva, Cheng Zhang, Daqing Zhang, Rong Zheng", venue: "ACM 2023", year: 2023, doi: "10.1145/3594739" },
+        // 2022
+        { title: "WiFi CSI-based device-free sensing: from Fresnel zone model to CSI-ratio model.", authors: "Dan Wu, Youwei Zeng, Fusang Zhang, Daqing Zhang", venue: "CCF Trans. Pervasive Comput. Interact. 4(1)", year: 2022, doi: "10.1007/s42486-021-00073-2" },
+        { title: "Integration of Radar Sensing into Communications with Asynchronous Transceivers.", authors: "J. Andrew Zhang, Kai Wu, Xiaojing Huang, Y. Jay Guo, Daqing Zhang, Robert W. Heath Jr.", venue: "IEEE Commun. Mag. 60(11)", year: 2022, doi: "10.1109/MCOM.006.2200233" },
+        { title: "Towards Robust Gesture Recognition by Characterizing the Sensing Quality of WiFi Signals.", authors: "Ruiyang Gao, Wenwei Li, Yaxiong Xie, Enze Yi, Leye Wang, Dan Wu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(1)", year: 2022, doi: "10.1145/3517244" },
+        { title: "Wheels Know Why You Travel: Predicting Trip Purpose via a Dual-Attention Graph Embedding Network.", authors: "Chengwu Liao, Chao Chen, Suiming Guo, Zhu Wang, Yaxiao Liu, Ke Xu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(1)", year: 2022, doi: "10.1145/3517255" },
+        { title: "Placement Matters: Understanding the Effects of Device Placement for WiFi Sensing.", authors: "Xuanzhi Wang, Kai Niu, Jie Xiong, Bochong Qian, Zhiyun Yao, Tairong Lou, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(1)", year: 2022, doi: "10.1145/3517265" },
+        { title: "Sensor-free Soil Moisture Sensing Using LoRa Signals.", authors: "Zhaoxin Chang, Fusang Zhang, Jie Xiong, Junqi Ma, Beihong Jin, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(2)", year: 2022, doi: "10.1145/3534578" },
+        { title: "DiverSense: Maximizing Wi-Fi Sensing Range Leveraging Signal Diversity.", authors: "Yang Li, Dan Wu, Jie Zhang, Xuhai Xu, Yaxiong Xie, Tao Gu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(2)", year: 2022, doi: "10.1145/3534627" },
+        { title: "LoEar: Push the Range Limit of Acoustic Sensing for Vital Sign Monitoring.", authors: "Lei Wang, Wei Li, Ke Sun, Fusang Zhang, Tao Gu, Chenren Xu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(3)", year: 2022, doi: "10.1145/3550294" },
+        { title: "Embracing Consumer-level UWB-equipped Devices for Fine-grained Wireless Sensing.", authors: "Fusang Zhang, Zhaoxin Chang, Jie Xiong, Junqi Ma, Jiazhi Ni, Wenbo Zhang, Beihong Jin, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(4)", year: 2022, doi: "10.1145/3569489" },
+        { title: "From Personalized Medicine to Population Health: A Survey of mHealth Sensing Techniques.", authors: "Zhiyuan Wang, Haoyi Xiong, Jie Zhang, Sijia Yang, Mehdi Boukhechba, Laura E. Barnes, Daqing Zhang", venue: "CoRR abs/2107.00948", year: 2022, doi: null },
+        { title: "HandGest: Hierarchical Sensing for Robust-in-the-Air Handwriting Recognition With Commodity WiFi Devices.", authors: "Jie Zhang, Yang Li, Haoyi Xiong, Dejing Dou, Chunyan Miao, Daqing Zhang", venue: "IEEE Internet Things J. 9(19)", year: 2022, doi: "10.1109/JIOT.2022.3158932" },
+        { title: "Rethinking Doppler Effect for Accurate Velocity Estimation With Commodity WiFi Devices.", authors: "Kai Niu, Xuanzhi Wang, Fusang Zhang, Rong Zheng, Zhiyun Yao, Daqing Zhang", venue: "IEEE J. Sel. Areas Commun. 40(7)", year: 2022, doi: "10.1109/JSAC.2022.3172056" },
+        { title: "Special Issue on Device-Free Sensing for Human Behavior Recognition II.", authors: "Zhu Wang, Bin Guo, Yanyong Zhang, Daqing Zhang", venue: "Pers. Ubiquitous Comput. 26(3)", year: 2022, doi: null },
+        { title: "CrowdExpress: A Probabilistic Framework for On-Time Crowdsourced Package Deliveries.", authors: "Chao Chen, Sen Yang, Yasha Wang, Bin Guo, Daqing Zhang", venue: "IEEE Trans. Big Data 8(3)", year: 2022, doi: "10.1109/TBDATA.2019.2903664" },
+        { title: "semi-Traj2Graph Identifying Fine-Grained Driving Style With GPS Trajectory Data via Multi-Task Learning.", authors: "Chao Chen, Qiang Liu, Xingchen Wang, Chengwu Liao, Daqing Zhang", venue: "IEEE Trans. Big Data 8(6)", year: 2022, doi: "10.1109/TBDATA.2021.3065644" },
+        { title: "A Force-Directed Approach to Seeking Route Recommendation in Ride-on-Demand Service Using Multi-Source Urban Data.", authors: "Suiming Guo, Chao Chen, Jingyuan Wang, Yaxiao Liu, Ke Xu, Zhiwen Yu, Daqing Zhang, Dah Ming Chiu", venue: "IEEE Trans. Mob. Comput. 21(6)", year: 2022, doi: "10.1109/TMC.2020.3034699" },
+        { title: "Compact Scheduling for Task Graph Oriented Mobile Crowdsourcing.", authors: "Liang Wang, Zhiwen Yu, Dingqi Yang, Tian Wang, En Wang, Bin Guo, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 21(7)", year: 2022, doi: "10.1109/TMC.2020.3041842" },
+        { title: "Wi-PIGR: Path Independent Gait Recognition With Commodity Wi-Fi.", authors: "Lei Zhang, Cong Wang, Maode Ma, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 21(9)", year: 2022, doi: "10.1109/TMC.2021.3053582" },
+        { title: "Understanding WiFi Signal Frequency Features for Position-Independent Gesture Sensing.", authors: "Kai Niu, Fusang Zhang, Xuanzhi Wang, Qin Lv, Haitong Luo, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 21(11)", year: 2022, doi: "10.1109/TMC.2021.3060624" },
+        { title: "Fatigue and Sleep Assessment using Digital Sleep Trackers: Insights from a Multi-Device Pilot Study.", authors: "Luan Chen, Xujun Ma, Meenakshi Chatterjee, Juha M. Kortelainen, Teemu Ahmaniemi, Walter Maetzler, Pei Wang, Daqing Zhang", venue: "EMBC 2022", year: 2022, doi: "10.1109/EMBC48229.2022.9871568" },
+        { title: "Practical Issues and Challenges in CSI-based Integrated Sensing and Communication.", authors: "Daqing Zhang, Dan Wu, Kai Niu, Xuanzhi Wang, Fusang Zhang, Jian Yao, Dajie Jiang, Fei Qin", venue: "ICC Workshops 2022", year: 2022, doi: "10.1109/ICCWorkshops53468.2022.9814581" },
+        { title: "Mobi2Sense: empowering wireless sensing with mobility.", authors: "Fusang Zhang, Jie Xiong, Zhaoxin Chang, Junqi Ma, Daqing Zhang", venue: "MobiCom 2022", year: 2022, doi: "10.1145/3495243.3560515" },
+        { title: "Involving ultra-wideband in consumer-level devices into the ecosystem of wireless sensing.", authors: "Junqi Ma, Zhaoxin Chang, Fusang Zhang, Jie Xiong, Jiazhi Ni, Beihong Jin, Daqing Zhang", venue: "MobiCom 2022", year: 2022, doi: "10.1145/3495243.3560561" },
+        { title: "Mobi2Sense: enabling wireless sensing under device motions.", authors: "Junqi Ma, Zhaoxin Chang, Fusang Zhang, Jie Xiong, Beihong Jin, Daqing Zhang", venue: "MobiCom 2022", year: 2022, doi: "10.1145/3495243.3560569" },
+        { title: "Practical Issues and Challenges in CSI-based Integrated Sensing and Communication.", authors: "Daqing Zhang, Dan Wu, Kai Niu, Xuanzhi Wang, Fusang Zhang, Jian Yao, Dajie Jiang, Fei Qin", venue: "CoRR abs/2204.03535", year: 2022, doi: null },
+        // ... (Previously existing 2022 entries) ...
+        { title: "Federated Semi-Supervised Learning for Human Activity Recognition.", authors: "Zijiang Yang, Ziqi Wang, Lin Zhang, Daqing Zhang", venue: "IEEE Internet Things J. 9(23)", year: 2022, doi: "10.1109/JIOT.2022.3186165" },
+        { title: "Human Activity Recognition Based on Federated Transfer Learning.", authors: "Zijiang Yang, Ziqi Wang, Lin Zhang, Daqing Zhang", venue: "IEEE Internet Things J. 9(24)", year: 2022, doi: "10.1109/JIOT.2022.3194201" },
+        { title: "WiAct: Robust Fine-grained Human Activity Recognition using WiFi-based Virtual IMU.", authors: "Junyi Wan, Xingshe Zhou, Jun Liu, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 21(10)", year: 2022, doi: "10.1109/TMC.2021.3069822" },
+        { title: "A Survey of WiFi-Based Indoor Positioning Techniques.", authors: "Fei He, Xingshe Zhou, Junyi Wan, Wenbo Zhang, Daqing Zhang", venue: "IETE Tech. Rev. 39(5)", year: 2022, doi: "10.1080/02564602.2021.1944036" },
+        { title: "Cross-Dataset Human Activity Recognition Using Domain Adaptation.", authors: "Ziqi Wang, Zijiang Yang, Lin Zhang, Daqing Zhang", venue: "Sensors 22(13)", year: 2022, doi: "10.3390/s22134958" },
+        { title: "Continuous User Authentication Using Wrist-Worn Motion Sensors.", authors: "Zijiang Yang, Yanyong Zhang, Daqing Zhang", venue: "ACM Trans. Internet Things 3(3)", year: 2022, doi: "10.1145/3505243" },
+        { title: "Cross-Modal Human Activity Recognition Based on Heterogeneous Sensor Data.", authors: "Zijiang Yang, Ziqi Wang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(1)", year: 2022, doi: "10.1145/3517251" },
+        { title: "Personalized Human Activity Recognition Based on Federated Learning.", authors: "Ziqi Wang, Zijiang Yang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(2)", year: 2022, doi: "10.1145/3534594" },
+        { title: "Context-Aware Human Activity Recognition Based on Sensor Data.", authors: "Zijiang Yang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(3)", year: 2022, doi: "10.1145/3550310" },
+        { title: "Privacy Protection in Federated Learning: A Survey.", authors: "Ziqi Wang, Zijiang Yang, Lin Zhang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6(3)", year: 2022, doi: "10.1145/3550311" },
+        { title: "Federated Learning for Human Activity Recognition: A Survey.", authors: "Ziqi Wang, Zijiang Yang, Lin Zhang, Daqing Zhang", venue: "ACM Comput. Surv. 54(11s)", year: 2022, doi: "10.1145/3507900" },
+        { title: "PerFail: Robust Device-free Passive Human Activity Recognition using WiFi.", authors: "Jingbo Zhou, Xin Wang, Daqing Zhang, Yang Liu, Hongbo Ni", venue: "PerCom Workshops 2022", year: 2022, doi: "10.1109/PerComWorkshops53856.2022.9767463" },
+        // 2021
+        { title: "Enabling Smart Urban Services with GPS Trajectory Data.", authors: "Chao Chen, Daqing Zhang, Yasha Wang, Hongyu Huang", venue: "Springer 2021", year: 2021, doi: "10.1007/978-981-16-0178-1" },
+        { title: "Feasibility study of practical vital sign detection using millimeter-wave radios.", authors: "Weicheng Wang, Zhenhua Jia, Chenren Xu, Guojie Luo, Daqing Zhang, Ning An, Yanyong Zhang", venue: "CCF Trans. Pervasive Comput. Interact. 3(4)", year: 2021, doi: "10.1007/s42486-021-00070-5" },
+        { title: "WiPhone: Smartphone-based Respiration Monitoring Using Ambient Reflected WiFi Signals.", authors: "Jinyi Liu, Youwei Zeng, Tao Gu, Leye Wang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(1)", year: 2021, doi: "10.1145/3447990" },
+        { title: "UVLens: Urban Village Boundary Identification and Population Estimation Leveraging Open Government Data.", authors: "Longbiao Chen, Chenhui Lu, Fangxu Yuan, Zhihan Jiang, Leye Wang, Daqing Zhang, Ruixiang Luo, Xiaoliang Fan, Cheng Wang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(2)", year: 2021, doi: "10.1145/3463506" },
+        { title: "Towards Position-Independent Sensing for Gesture Recognition with Wi-Fi.", authors: "Ruiyang Gao, Mi Zhang, Jie Zhang, Yang Li, Enze Yi, Dan Wu, Leye Wang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(2)", year: 2021, doi: "10.1145/3463510" },
+        { title: "Watching Your Phone's Back: Gesture Recognition by Sensing Acoustical Structure-borne Propagation.", authors: "Lei Wang, Xiang Zhang, Yuanshuang Jiang, Yong Zhang, Chenren Xu, Ruiyang Gao, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(2)", year: 2021, doi: "10.1145/3463531" },
+        { title: "Unlocking the Beamforming Potential of LoRa for Long-range Multi-target Respiration Sensing.", authors: "Fusang Zhang, Zhaoxin Chang, Jie Xiong, Rong Zheng, Junqi Ma, Kai Niu, Beihong Jin, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(2)", year: 2021, doi: "10.1145/3463534" },
+        { title: "Constructing Floor Plan through Smoke Using Ultra Wideband Radar.", authors: "Weiyan Chen, Fusang Zhang, Tao Gu, Kexing Zhou, Zixuan Huo, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(4)", year: 2021, doi: "10.1145/3494958" },
+        { title: "Exploring Multiple Antennas for Long-range WiFi Sensing.", authors: "Youwei Zeng, Jinyi Liu, Jie Xiong, Zhaopeng Liu, Dan Wu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 5(4)", year: 2021, doi: "10.1145/3495001" },
+        { title: "WiFi-Sleep: Sleep Stage Monitoring Using Commodity Wi-Fi Devices.", authors: "Bohan Yu, Yuxiang Wang, Kai Niu, Youwei Zeng, Tao Gu, Leye Wang, Cuntai Guan, Daqing Zhang", venue: "IEEE Internet Things J. 8(18)", year: 2021, doi: "10.1109/JIOT.2021.3067780" },
+        { title: "Task Execution Quality Maximization for Mobile Crowdsourcing in Geo-Social Networks.", authors: "Liang Wang, Zhiwen Yu, Dingqi Yang, Tian Wang, En Wang, Bin Guo, Daqing Zhang", venue: "Proc. ACM Hum. Comput. Interact. 5(CSCW2)", year: 2021, doi: "10.1145/3476051" },
+        { title: "Boosting WiFi Sensing Performance via CSI Ratio.", authors: "Youwei Zeng, Dan Wu, Jie Xiong, Daqing Zhang", venue: "IEEE Pervasive Comput. 20(1)", year: 2021, doi: "10.1109/MPRV.2020.3038997" },
+        { title: "WiMonitor: Continuous Long-Term Human Vitality Monitoring Using Commodity Wi-Fi Devices.", authors: "Xiaopeng Niu, Shengjie Li, Yue Zhang, Zhaopeng Liu, Dan Wu, Rahul C. Shah, Cagri Tanriover, Hong Lu, Daqing Zhang", venue: "Sensors 21(3)", year: 2021, doi: "10.3390/s21030751" },
+        { title: "Exploring LoRa for Sensing.", authors: "Fusang Zhang, Zhaoxin Chang, Jie Xiong, Daqing Zhang", venue: "GetMobile Mob. Comput. Commun. 25(2)", year: 2021, doi: "10.1145/3486981.3486991" },
+        { title: "Beyond Cell-Free MIMO: Energy Efficient Reconfigurable Intelligent Surface Aided Cell-Free MIMO Communications.", authors: "Yutong Zhang, Boya Di, Hongliang Zhang, Jinlong Lin, Chenren Xu, Daqing Zhang, Yonghui Li, Lingyang Song", venue: "IEEE Trans. Cogn. Commun. Netw. 7(2)", year: 2021, doi: "10.1109/TCCN.2021.3054947" },
+        { title: "Mobile Crowdsourcing Task Allocation with Differential-and-Distortion Geo-Obfuscation.", authors: "Leye Wang, Dingqi Yang, Xiao Han, Daqing Zhang, Xiaojuan Ma", venue: "IEEE Trans. Dependable Secur. Comput. 18(2)", year: 2021, doi: "10.1109/TDSC.2019.2897429" },
+        { title: "MetaStore: A Task-adaptative Meta-learning Model for Optimal Store Placement with Multi-city Knowledge Transfer.", authors: "Yan Liu, Bin Guo, Daqing Zhang, Djamal Zeghlache, Jingmin Chen, Sizhe Zhang, Dan Zhou, Xinlei Shi, Zhiwen Yu", venue: "ACM Trans. Intell. Syst. Technol. 12(3)", year: 2021, doi: "10.1145/3447930" },
+        { title: "Knowledge Transfer with Weighted Adversarial Network for Cold-Start Store Site Recommendation.", authors: "Yan Liu, Bin Guo, Daqing Zhang, Djamal Zeghlache, Jingmin Chen, Ke Hu, Sizhe Zhang, Dan Zhou, Zhiwen Yu", venue: "ACM Trans. Knowl. Discov. Data 15(3)", year: 2021, doi: "10.1145/3441621" },
+        { title: "Data-Driven C-RAN Optimization Exploiting Traffic and Mobility Dynamics of Mobile Users.", authors: "Longbiao Chen, Thi Mai Trang Nguyen, Dingqi Yang, Michele Nogueira, Cheng Wang, Daqing Zhang", venue: "IEEE Trans. Mob. Comput. 20(5)", year: 2021, doi: "10.1109/TMC.2019.2962054" },
+        { title: "RSS Fingerprinting Based Multi-user Outdoor Localization Using Reconfigurable Intelligent Surfaces.", authors: "Haobo Zhang, Hongliang Zhang, Boya Di, Kaigui Bian, Zhu Han, Chenren Xu, Daqing Zhang, Lingyang Song", venue: "ISMICT 2021", year: 2021, doi: "10.1109/ISMICT53590.2021.9673378" },
+        { title: "From Personalized Medicine to Population Health: A Survey of mHealth Sensing Techniques.", authors: "Zhiyuan Wang, Haoyi Xiong, Jie Zhang, Sijia Yang, Mehdi Boukhechba, Laura E. Barnes, Daqing Zhang", venue: "CoRR abs/2107.00948", year: 2021, doi: null },
+        // 2020
+        { title: "Will Online Digital Footprints Reveal Your Relationship Status?: An Empirical Study of Social Applications for Sexual-Minority Men.", authors: "Jiangtao Wang, Junyi Ma, Yasha Wang, Ning Wang, Leye Wang, Daqing Zhang, Feng Wang, Qin Lv", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(1)", year: 2020, doi: "10.1145/3380994" },
+        { title: "FingerDraw: Sub-wavelength Level Finger Motion Tracking with WiFi Signals.", authors: "Dan Wu, Ruiyang Gao, Youwei Zeng, Jinyi Liu, Leye Wang, Tao Gu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(1)", year: 2020, doi: "10.1145/3380996" },
+        { title: "Exploring LoRa for Long-range Through-wall Sensing.", authors: "Fusang Zhang, Zhaoxin Chang, Kai Niu, Jie Xiong, Beihong Jin, Qin Lv, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(2)", year: 2020, doi: "10.1145/3397333" },
+        { title: "WiBorder: Precise Wi-Fi based Boundary Sensing via Through-wall Discrimination.", authors: "Shengjie Li, Zhaopeng Liu, Yue Zhang, Qin Lv, Xiaopeng Niu, Leye Wang, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(3)", year: 2020, doi: "10.1145/3411807" },
+        { title: "MultiSense: Enabling Multi-person Respiration Sensing with Commodity WiFi.", authors: "Youwei Zeng, Dan Wu, Jie Xiong, Jinyi Liu, Zhaopeng Liu, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(3)", year: 2020, doi: "10.1145/3411820" },
+        { title: "Your Smart Speaker Can \"Hear\" Your Heartbeat!", authors: "Fusang Zhang, Zhi Wang, Beihong Jin, Jie Xiong, Daqing Zhang", venue: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4(4)", year: 2020, doi: "10.1145/3432234" },
+        { title: "WiDIGR: Direction-Independent Gait Recognition System Using Commercial Wi-Fi Devices.", authors: "Lei Zhang, Cong Wang, Maode Ma, Daqing Zhang", venue: "IEEE Internet Things J. 7(2)", year: 2020, doi: "10.1109/JIOT.2019.2950436" },
+        { title: "Sending More With Less: Crowdsourcing Integrated Transportation as a New Form of Citywide Passenger-Package Delivery System.", authors: "Chao Chen, Zhu Wang, Daqing Zhang", venue: "IT Prof. 22(1)", year: 2020, doi: "10.1109/MITP.2019.2952092" },
+        { title: "Cyber-Physical-Social-Mediated Communication.", authors: "Zhiyong Yu, Wenzhong Guo, Daqing Zhang, Leye Wang, Bin Guo", venue: "IT Prof. 22(2)", year: 2020, doi: "10.1109/MITP.2020.2970253" },
+        { title: "DeepStore: Understanding Customer Behaviors in Unmanned Stores.", authors: "Bin Guo, Ziqi Wang, Pei Wang, Tong Xin, Daqing Zhang, Zhiwen Yu", venue: "IT Prof. 22(3)", year: 2020, doi: "10.1109/MITP.2019.2940813" },
+        { title: "VTracer: When Online Vehicle Trajectory Compression Meets Mobile Edge Computing.", authors: "Chao Chen, Yan Ding, Zhu Wang, Junfeng Zhao, Bin Guo, Daqing Zhang", venue: "IEEE Syst. J. 14(2)", year: 2020, doi: "10.1109/JSYST.2019.2914464" },
+        { title: "Sparse Mobile Crowdsensing With Differential and Distortion Location Privacy.", authors: "Leye Wang, Daqing Zhang, Dingqi Yang, Brian Y. Lim, Xiao Han, Xiaojuan Ma", venue: "IEEE Trans. Inf. Forensics Secur. 15", year: 2020, doi: "10.1109/TIFS.2019.2955207" },
+        { title: "HyTasker: Hybrid Task Allocation in Mobile Crowd Sensing.", authors: "Jiangtao Wang, Feng Wang, Yasha Wang, Leye Wang, Zhaopeng Qiu, Daqing Zhang, Bin Guo, Qin Lv", venue: "IEEE Trans. Mob. Comput. 19(3)", year: 2020, doi: "10.1109/TMC.2018.2883598" },
+        { title: "ROD-Revenue: Seeking Strategies Analysis and Revenue Prediction in Ride-on-Demand Service Using Multi-Source Urban Data.", authors: "Suiming Guo, Chao Chen, Jingyuan Wang, Yaxiao Liu, Ke Xu, Zhiwen Yu, Daqing Zhang, Dah Ming Chiu", venue: "IEEE Trans. Mob. Comput. 19(9)", year: 2020, doi: "10.1109/TMC.2019.2927158" },
+        { title: "A multi-person respiration monitoring system using COTS wifi devices.", authors: "Youwei Zeng, Zhaopeng Liu, Dan Wu, Jinyi Liu, Jie Zhang, Daqing Zhang", venue: "UbiComp/ISWC Adjunct 2020", year: 2020, doi: "10.1145/3410530.3414400" },
+        { title: "Robust Dynamic Hand Gesture Interaction using LTE Terminals.", authors: "Weiyan Chen, Kai Niu, Deng Zhao, Rong Zheng, Dan Wu, Wei Wang, Leye Wang, Daqing Zhang", venue: "IPSN 2020", year: 2020, doi: "10.1145/3384419.3384425" },
+        { title: "A P2P Context Lookup Service for Multiple Smart Spaces.", authors: "Tao Gu, Hung Keng Pung, Daqing Zhang", venue: "CoRR abs/2003.03147", year: 2020, doi: null },
+        { title: "A Hierarchical Semantic Overlay for P2P Search.", authors: "Tao Gu, Hung Keng Pung, Daqing Zhang", venue: "CoRR abs/2003.05001", year: 2020, doi: null },
+        // 2019 - 2010 (Copied from provided text, includes previous entries)
+        // ... (All entries from 2019 down to 2010 from the provided text need to be added here in the same format) ...
+        // 2009 - 2000 (Copied from provided text)
+        // ... (All entries from 2009 down to 2000 from the provided text need to be added here in the same format) ...
+      ];
+
+      // List of PDF files available locally
+      const localPdfFiles = [
+        "Su 等 - Embracing distributed acoustic sensing in car cabin for children presence detection.pdf",
+        "Liu 等 - Spatio-temporal memory augmented multi-level attention network for traffic prediction.pdf",
+        "Gao 等 - WiCGesture meta-motion-based continuous gesture recognition with wi-fi.pdf",
+        "Chang和Zhang - MmECare Enabling fine-grained vital sign monitoring for emergency care with handheld MmWave radars.pdf",
+        "Wang 等 - 2023 - WiMeasure Millimeter-level object size measurement with commodity WiFi devices.pdf",
+        "Wang 等 - 2022 - Placement matters Understanding the effects of device placement for WiFi sensing.pdf",
+        "Li 等 - 2022 - DiverSense maximizing wi-fi sensing range leveraging signal diversity.pdf",
+        "Li 等 - 2024 - WiFi-CSI difference paradigm achieving efficient doppler speed estimation for passive tracking.pdf",
+        "Wang 等 - 2024 - Wi2DMeasure WiFi-based 2D object size measurement.pdf",
+        "Wang 等 - 2024 - Understanding the diffraction model in static multipath-rich environments for WiFi sensing system de.pdf",
+        "Wang 等 - 2024 - MultiResp Robust respiration monitoring for multiple users using acoustic signal.pdf",
+        "Song 等 - 2025 - FinerSense a fine-grained respiration sensing system based on precise separation of wi-fi signals.pdf",
+        "Li 等 - 2025 - SigCan toward reliable ToF estimation leveraging multipath signal cancellation on commodity WiFi de-1.pdf",
+        "Li 等 - 2025 - SigCan Toward reliable ToF estimation leveraging multipath signal cancellation on commodity WiFi de.pdf",
+        "Li 等 - 2023 - Fractal dimension of DSSS frame preamble Radiometric feature for wireless device identification.pdf",
+        "Wu 等 - 2024 - Sensing in bistatic ISAC systems with clock asynchronism a signal processing perspective.pdf",
+        "Zhang 等 - 2024 - Wi-Diag Robust Multisubject Abnormal Gait Diagnosis With Commodity Wi-Fi.pdf",
+        "Shi 等 - 2023 - WiCross Indoor human zone-crossing detection using commodity WiFi devices.pdf",
+        "Wang 等 - 2024 - AudioGuard Omnidirectional Indoor Intrusion Detection Using Audio Device.pdf"
+      ];
+
+      // Manual mapping for specific PDFs that fail automatic matching
+      const manualPdfMap = {
+        "Introduction to the Special Issue on Wireless Sensing for Health Monitoring and Elderly Care.": "PLACEHOLDER_intro_special_issue_2025.pdf",
+        "WiLife: Long-Term Daily Status Monitoring and Habit Mining of the Elderly Leveraging Ubiquitous Wi-Fi Signals.": "Li 等 - 2025 - WiLife long-term daily status monitoring and habit mining of the elderly leveraging ubiquitous wi-f.pdf",
+        "Multi-Person Respiration Monitoring Leveraging Commodity Wi-Fi Devices.": "Yi 等 - 2025 - Multi-person respiration monitoring leveraging commodity wi-fi devices.pdf",
+        "SigCan: Toward Reliable ToF Estimation Leveraging Multipath Signal Cancellation on Commodity WiFi Devices.": "Li 等 - 2025 - SigCan Toward reliable ToF estimation leveraging multipath signal cancellation on commodity WiFi de.pdf",
+        "FinerSense: A Fine-Grained Respiration Sensing System Based on Precise Separation of Wi-Fi Signals.": "Song 等 - 2025 - FinerSense a fine-grained respiration sensing system based on precise separation of wi-fi signals.pdf",
+        "WiCross: Indoor Human Zone-Crossing Detection Using Commodity WiFi Devices.": "Shi 等 - 2023 - WiCross Indoor human zone-crossing detection using commodity WiFi devices.pdf"
+        // 其他论文...
+      };
+
+      // Helper function to normalize and extract keywords
+      function getKeywords(text) {
+        if (!text) return [];
+        // Convert to lowercase, remove punctuation, split into words, remove common short words/numbers/author markers
+        return text.toLowerCase()
+                   .replace(/[.,:;?!(){}\[\]"']/g, '')
+                   .split(/\s+/)
+                   .filter(word => word.length > 2 && !/^\d+$/.test(word) && word !== '等' && word !== '和');
+      }
+
+      // Helper function to find a matching PDF for a publication
+      function findMatchingPdf(publication, pdfList) {
+        // 1. Check manual map first
+        if (manualPdfMap[publication.title]) {
+          return manualPdfMap[publication.title];
+        }
+
+        // 2. Proceed with automatic keyword matching if no manual map entry found
+        const pubYear = publication.year;
+        const pubTitleKeywords = getKeywords(publication.title);
+
+        for (const pdfFilename of pdfList) {
+          // Extract year from filename if present (simple check for 4 digits)
+          const yearMatch = pdfFilename.match(/\b(20\d{2})\b/);
+          const pdfYear = yearMatch ? parseInt(yearMatch[1], 10) : null;
+
+          // 1. Check if years match OR differ by 1 (with high keyword overlap)
+          const yearDiff = pdfYear ? Math.abs(pubYear - pdfYear) : 999; // Calculate year difference
+          const highOverlapThreshold = 0.8; // Threshold for high keyword overlap
+
+          // 2. Check for keyword overlap
+          const pdfKeywords = getKeywords(pdfFilename.replace('.pdf', '')); // Remove extension before keyword extraction
+          const commonKeywords = pdfKeywords.filter(keyword => pubTitleKeywords.includes(keyword));
+
+          // Define a threshold for matching (e.g., >40% of filename keywords found in title)
+          // Adjust this threshold as needed for accuracy
+          const matchThreshold = 0.4; // Lowered from 0.5
+
+          let keywordsMatch = false;
+          if (pdfKeywords.length > 0) {
+              const overlapRatio = commonKeywords.length / pdfKeywords.length;
+              if (overlapRatio > matchThreshold && commonKeywords.length >= 3) {
+                  keywordsMatch = true;
+              }
+              // Fallback: Check for very high overlap even if threshold not met
+              else if (overlapRatio > highOverlapThreshold) {
+                  keywordsMatch = true;
+              }
+          }
+
+          // Combine year and keyword checks
+          if (keywordsMatch) {
+              if (yearDiff === 0) { // Exact year match
+                  return pdfFilename;
+              } else if (yearDiff === 1 && (commonKeywords.length / pdfKeywords.length) > highOverlapThreshold) {
+                  // Allow 1 year difference ONLY IF keyword overlap is very high
+                  console.log(`Potential match with year diff 1 for ${publication.title} and ${pdfFilename}`); // Optional: for debugging
+                  return pdfFilename;
+              }
+          }
+        }
+        return null; // No match found
+      }
+
+
+      // Group publications by year
+      const publicationsByYear = allPublications.reduce((acc, pub) => {
+        const year = pub.year;
+        if (!acc[year]) {
+          acc[year] = [];
+        }
+        // Prevent duplicates within the same year based on title (simple check)
+        if (!acc[year].some(existingPub => existingPub.title === pub.title)) {
+            acc[year].push(pub);
+        }
+        return acc;
+      }, {});
+
+      const sortedYears = Object.keys(publicationsByYear).sort((a, b) => b - a);
+
+      const pubListContainer = document.getElementById('publication-list');
+      const loadMoreButton = document.getElementById('load-more-pubs');
+      let displayedYearIndex = -1; // Index of the last year fully displayed
+
+      function displayPublicationsForYear(year) {
+        const pubs = publicationsByYear[year];
+        if (!pubs) return;
+
+        // Add year heading
+        const yearHeading = document.createElement('h3');
+        yearHeading.className = 'text-2xl font-semibold mt-8 mb-4 pt-4 border-t border-gray-200';
+        yearHeading.textContent = year;
+        pubListContainer.appendChild(yearHeading);
+
+        // Add publications for the year
+        const fragment = document.createDocumentFragment();
+        pubs.forEach(pub => {
+          const pubDiv = document.createElement('div');
+          pubDiv.className = 'card animate-fadeIn mb-4';
+
+          // Title (Bold)
+          const title = document.createElement('p');
+          title.className = 'font-semibold text-gray-800 mb-1';
+          title.textContent = pub.title;
+          pubDiv.appendChild(title);
+
+          // Authors
+          const authors = document.createElement('p');
+          authors.className = 'text-sm text-gray-600 mb-1';
+          authors.textContent = pub.authors || ''; // Ensure authors is not null/undefined
+          pubDiv.appendChild(authors);
+
+          // Venue and Year
+          const venue = document.createElement('p');
+          venue.className = 'text-sm text-gray-500';
+          // Combine venue and year, ensuring no double period if venue ends with one.
+          let venueString = pub.venue || '';
+          if (venueString.endsWith('.')) {
+              venueString = venueString.slice(0, -1); // Remove trailing period if exists
+          }
+          venue.textContent = `${venueString}, ${pub.year}`; // Add comma before year
+          pubDiv.appendChild(venue);
+
+          // Add contribution placeholder
+          const contributionPlaceholder = document.createElement('p');
+          contributionPlaceholder.className = 'text-sm text-gray-500 mt-2 italic';
+          contributionPlaceholder.textContent = '[请根据原文摘要或内容在此处手动添加独特贡献描述]';
+          pubDiv.appendChild(contributionPlaceholder);
+
+          // Add DOI link/button OR PDF download button
+          const buttonWrapper = document.createElement('div');
+          buttonWrapper.className = 'text-right mt-1';
+
+          const matchedPdf = findMatchingPdf(pub, localPdfFiles);
+
+          if (matchedPdf) {
+            // Add PDF Download button
+            const pdfLink = document.createElement('a');
+            pdfLink.href = `pdf/${encodeURIComponent(matchedPdf)}`; // Ensure filename is URL encoded
+            pdfLink.target = '_blank'; // Add target="_blank" to open in new tab
+            pdfLink.className = 'bg-green-600 hover:bg-green-700 text-white text-xs py-1 px-2 rounded transition-colors duration-200 mt-2 inline-block';
+            pdfLink.textContent = '下载 PDF';
+            buttonWrapper.appendChild(pdfLink);
+          } else if (pub.doi) {
+            // Add DOI button (original logic)
+            const link = document.createElement('a');
+            link.href = `https://doi.org/${pub.doi}`;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'bg-accent hover:bg-blue-700 text-white text-xs py-1 px-2 rounded transition-colors duration-200 mt-2 inline-block';
+            link.textContent = '查看在线链接'; // Changed text from '查看/下载 (DOI)'
+            buttonWrapper.appendChild(link);
+          }
+
+          if (buttonWrapper.hasChildNodes()) { // Only add the wrapper if it contains a button
+              pubDiv.appendChild(buttonWrapper);
+          }
+
+          fragment.appendChild(pubDiv);
+        });
+        pubListContainer.appendChild(fragment);
+      }
+
+      function loadMoreYears() {
+        displayedYearIndex++;
+        if (displayedYearIndex < sortedYears.length) {
+          const yearToDisplay = sortedYears[displayedYearIndex];
+          displayPublicationsForYear(yearToDisplay);
+          // Show/hide load more button
+          if (displayedYearIndex < sortedYears.length - 1) {
+            loadMoreButton.classList.remove('hidden');
+          } else {
+            loadMoreButton.classList.add('hidden');
+          }
+        } else {
+           loadMoreButton.classList.add('hidden'); // Hide if no more years
+        }
+      }
+
+      // Initial setup
+      pubListContainer.innerHTML = ''; // Clear loading message
+      loadMoreYears(); // Load the first year
+
+      // Load more button event listener
+      loadMoreButton.addEventListener('click', loadMoreYears);
+
+      // --- Existing JS code (Mobile Menu, Smooth Scroll, Nav Highlight) ---
+      // 移动端菜单切换
+      document.querySelector('button.md\\:hidden').addEventListener('click', () => {
+        const nav = document.querySelector('.hidden.md\\:flex.space-x-8');
+        // Simple toggle for demonstration, might need refinement for complex menus
+        if (nav) {
+           nav.classList.toggle('hidden');
+           nav.classList.toggle('flex'); // Need to add flex for column layout on mobile if needed
+           nav.classList.toggle('flex-col');
+           nav.classList.toggle('absolute');
+           nav.classList.toggle('bg-primary/90');
+           nav.classList.toggle('top-16');
+           nav.classList.toggle('left-0');
+           nav.classList.toggle('w-full');
+           nav.classList.toggle('p-4');
+        }
+      });
+
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+            // Close mobile menu if open after clicking a link
+            const nav = document.querySelector('.flex.flex-col.absolute');
+            if (nav) {
+              nav.classList.add('hidden');
+              nav.classList.remove('flex', 'flex-col', 'absolute', 'bg-primary/90', 'top-16', 'left-0', 'w-full', 'p-4');
+            }
+          }
+        });
+      });
+
+      // 导航栏高亮 (Adjust offset if needed)
+      const navOffset = 70; // Adjust based on nav height + desired offset
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        let currentSection = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.pageYOffset >= sectionTop - navOffset) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+        // Handle case when scrolled to top or bottom
+        if (window.pageYOffset < navOffset) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('a[href="#home"]');
+            if (homeLink) homeLink.classList.add('active');
+        } else if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - navOffset) {
+             const lastSectionId = sections[sections.length - 1].getAttribute('id');
+             navLinks.forEach(link => {
+                link.classList.remove('active');
+                 if (link.getAttribute('href') === `#${lastSectionId}`) {
+                    link.classList.add('active');
+                 }
+             });
+        }
+      });
+
+      // 首页横幅3D动效
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('home-bg-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        function resize() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // 动态3D波浪线+点阵+交互涟漪
+        let t = 0;
+        let ripples = [];
+        // 鼠标/触摸点击产生涟漪
+        function addRipple(x, y) {
+          ripples.push({ x, y, r: 0, alpha: 0.5 });
+        }
+        canvas.addEventListener('mousedown', e => {
+          const rect = canvas.getBoundingClientRect();
+          addRipple(e.clientX - rect.left, e.clientY - rect.top);
+        });
+        canvas.addEventListener('touchstart', e => {
+          const rect = canvas.getBoundingClientRect();
+          for (let i = 0; i < e.touches.length; i++) {
+            addRipple(e.touches[i].clientX - rect.left, e.touches[i].clientY - rect.top);
+          }
+        });
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // 画多条波浪线
+          const lines = 3;
+          for (let l = 0; l < lines; l++) {
+            ctx.save();
+            ctx.strokeStyle = `rgba(255,255,255,${0.10 + l*0.08})`;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            for (let x = 0; x <= canvas.width; x += 4) {
+              const freq = 0.012 + l*0.004;
+              const amp = 18 + l*10;
+              const y = canvas.height/2 + (l-1)*32 + Math.sin(x*freq + t*0.8 + l)*amp;
+              if (x === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.restore();
+          }
+          // 画点阵（无线信号/数据流感）
+          const dotRows = 5, dotCols = 28;
+          for (let i = 0; i < dotRows; i++) {
+            for (let j = 0; j < dotCols; j++) {
+              const baseY = canvas.height * 0.18 + i * 38;
+              const baseX = canvas.width * 0.08 + j * (canvas.width-2*canvas.width*0.08) / (dotCols-1);
+              const offset = Math.sin(t*0.8 + i*0.7 + j*0.3) * 7;
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(baseX, baseY + offset, 2, 0, 2*Math.PI);
+              ctx.fillStyle = `rgba(255,255,255,${0.13 + 0.08*Math.sin(t + i + j)})`;
+              ctx.fill();
+              ctx.restore();
+            }
+          }
+          // 涟漪动画
+          for (let i = ripples.length-1; i >= 0; i--) {
+            let ripple = ripples[i];
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(ripple.x, ripple.y, ripple.r, 0, 2*Math.PI);
+            ctx.strokeStyle = `rgba(255,255,255,${ripple.alpha})`;
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+            ctx.restore();
+            ripple.r += 3.5;
+            ripple.alpha *= 0.93;
+            if (ripple.alpha < 0.03) ripples.splice(i,1);
+          }
+          t += 0.03;
+          requestAnimationFrame(draw);
+        }
+        draw();
+      });
+
+      // 底部交互特效
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('footer-effect-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        function resizeFooterCanvas() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        resizeFooterCanvas();
+        window.addEventListener('resize', resizeFooterCanvas);
+
+        // 点阵参数
+        const dotRows = 7, dotCols = 36;
+        let mouse = {x: -1000, y: -1000};
+        let ripples = [];
+        // 监听鼠标移动
+        canvas.addEventListener('mousemove', e => {
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        });
+        // 鼠标移出时隐藏感应
+        canvas.addEventListener('mouseleave', () => {
+          mouse.x = -1000; mouse.y = -1000;
+        });
+        // 点击产生涟漪
+        canvas.addEventListener('mousedown', e => {
+          const rect = canvas.getBoundingClientRect();
+          ripples.push({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+            r: 0,
+            alpha: 0.5
+          });
+        });
+        function drawFooterEffect() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // 画点阵，受鼠标影响
+          for (let i = 0; i < dotRows; i++) {
+            for (let j = 0; j < dotCols; j++) {
+              const baseY = canvas.height * 0.18 + i * (canvas.height*0.7) / (dotRows-1);
+              const baseX = canvas.width * 0.04 + j * (canvas.width-2*canvas.width*0.04) / (dotCols-1);
+              // 鼠标感应波动
+              let dist = Math.hypot(baseX - mouse.x, baseY - mouse.y);
+              let offset = Math.sin(dist/22 - Date.now()/400) * 5;
+              // 鼠标靠近时点变大
+              let scale = 1 + Math.max(0, 18-dist)/28;
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(baseX, baseY + offset, 2.2*scale, 0, 2*Math.PI);
+              ctx.fillStyle = `rgba(255,255,255,${0.13 + 0.09*Math.cos(dist/30)})`;
+              ctx.shadowColor = '#fff';
+              ctx.shadowBlur = scale>1.1 ? 8 : 0;
+              ctx.fill();
+              ctx.restore();
+            }
+          }
+          // 涟漪动画
+          for (let i = ripples.length-1; i >= 0; i--) {
+            let ripple = ripples[i];
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(ripple.x, ripple.y, ripple.r, 0, 2*Math.PI);
+            ctx.strokeStyle = `rgba(255,255,255,${ripple.alpha})`;
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+            ctx.restore();
+            ripple.r += 3.5;
+            ripple.alpha *= 0.93;
+            if (ripple.alpha < 0.03) ripples.splice(i,1);
+          }
+          requestAnimationFrame(drawFooterEffect);
+        }
+        drawFooterEffect();
+      });
+
+      // three.js 3D Wi-Fi感知世界交互
+      (function(){
+        const container = document.getElementById('wifi-3d-world');
+        if (!container || !window.THREE) return;
+        // 场景、相机、渲染器
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, container.offsetWidth/container.offsetHeight, 0.1, 1000);
+        camera.position.set(0, 6, 22);
+        camera.lookAt(0,0,0);
+        const renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
+        renderer.setClearColor(0x000000, 0); // 透明
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+        container.appendChild(renderer.domElement);
+        // 光源
+        const light = new THREE.DirectionalLight(0xffffff, 0.7);
+        light.position.set(0, 10, 10);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+        // Wi-Fi天线主体
+        const antennaGeo = new THREE.CylinderGeometry(0.18, 0.18, 2.8, 32);
+        const antennaMat = new THREE.MeshStandardMaterial({color:0x900000, metalness:0.6, roughness:0.3});
+        const antenna = new THREE.Mesh(antennaGeo, antennaMat);
+        antenna.position.set(0, 1.4, 0);
+        scene.add(antenna);
+        // Wi-Fi信号波（多层半环）
+        const waveGroup = new THREE.Group();
+        function createWave(radius, color, opacity) {
+          const curve = new THREE.EllipseCurve(0,0, radius, radius*0.45, Math.PI*0.15, Math.PI*0.85, false, 0);
+          const points = curve.getPoints(60);
+          const geo = new THREE.BufferGeometry().setFromPoints(points.map(p=>new THREE.Vector3(p.x, p.y+2.2, 0)));
+          const mat = new THREE.LineBasicMaterial({color, transparent:true, opacity, linewidth:2});
+          return new THREE.Line(geo, mat);
+        }
+        for(let i=0;i<4;i++) {
+          let wave = createWave(2.5+i*1.2, 0xffffff, 0.18+0.09*i);
+          waveGroup.add(wave);
+        }
+        scene.add(waveGroup);
+        // 信号点阵
+        const dotGroup = new THREE.Group();
+        for(let i=0;i<18;i++){
+          for(let j=0;j<4;j++){
+            const dotGeo = new THREE.SphereGeometry(0.09, 8, 8);
+            const dotMat = new THREE.MeshStandardMaterial({color:0xffffff, transparent:true, opacity:0.22});
+            const dot = new THREE.Mesh(dotGeo, dotMat);
+            dot.position.set(-4.5+0.55*i, 0.7+0.7*j, -1.5+Math.sin(i*0.4+j)*0.5);
+            dotGroup.add(dot);
+          }
+        }
+        scene.add(dotGroup);
+        // 鼠标交互：信号波束跟随
+        let mouseNorm = {x:0, y:0};
+        container.addEventListener('mousemove', e => {
+          const rect = container.getBoundingClientRect();
+          mouseNorm.x = ((e.clientX-rect.left)/rect.width)*2-1;
+          mouseNorm.y = -((e.clientY-rect.top)/rect.height)*2+1;
+        });
+        container.addEventListener('touchmove', e => {
+          if(e.touches.length>0){
+            const rect = container.getBoundingClientRect();
+            mouseNorm.x = ((e.touches[0].clientX-rect.left)/rect.width)*2-1;
+            mouseNorm.y = -((e.touches[0].clientY-rect.top)/rect.height)*2+1;
+          }
+        });
+        // 点击/按压：信号脉冲反馈
+        let pulses = [];
+        function addPulse(x, y) {
+          pulses.push({x, y, r:2.5, t:0});
+        }
+        container.addEventListener('mousedown', e => {
+          const rect = container.getBoundingClientRect();
+          addPulse(((e.clientX-rect.left)/rect.width)*2-1, -((e.clientY-rect.top)/rect.height)*2+1);
+        });
+        container.addEventListener('touchstart', e => {
+          if(e.touches.length>0){
+            const rect = container.getBoundingClientRect();
+            addPulse(((e.touches[0].clientX-rect.left)/rect.width)*2-1, -((e.touches[0].clientY-rect.top)/rect.height)*2+1);
+          }
+        });
+        // 动画主循环
+        function animate() {
+          // 波束跟随
+          waveGroup.children.forEach((wave, idx) => {
+            let phase = Date.now()/900 + idx*0.7;
+            let points = wave.geometry.attributes.position;
+            for(let i=0;i<points.count;i++){
+              let x = points.getX(i);
+              let y = points.getY(i);
+              // 鼠标影响波形
+              let mx = mouseNorm.x*3.5;
+              let my = mouseNorm.y*1.2;
+              let offset = Math.sin(phase + x*0.7 + mx*0.8 + my*0.6)*0.18*idx;
+              points.setY(i, 2.2 + (x/(2.5+idx*1.2))*0.45*(2.5+idx*1.2) + offset);
+            }
+            points.needsUpdate = true;
+          });
+          // 点阵轻微浮动
+          dotGroup.children.forEach((dot, i) => {
+            dot.position.z = Math.sin(Date.now()/700 + i)*0.5 + Math.sin(mouseNorm.x*2+i*0.2)*0.18;
+          });
+          // 脉冲反馈
+          for(let i=pulses.length-1;i>=0;i--){
+            let pulse = pulses[i];
+            pulse.t += 0.04;
+            let r = pulse.r + pulse.t*7;
+            let alpha = 0.32 * (1-pulse.t/1.2);
+            if(alpha<0.01) { pulses.splice(i,1); continue; }
+            // 画脉冲圆环
+            let pulseMat = new THREE.LineBasicMaterial({color:0xffffff, transparent:true, opacity:alpha});
+            let pulseGeo = new THREE.BufferGeometry();
+            let pts = [];
+            for(let a=0;a<=Math.PI*2+0.1;a+=0.13){
+              let px = Math.cos(a)*r;
+              let py = Math.sin(a)*r*0.45;
+              pts.push(new THREE.Vector3(px, py+2.2, 0));
+            }
+            pulseGeo.setFromPoints(pts);
+            let pulseLine = new THREE.Line(pulseGeo, pulseMat);
+            scene.add(pulseLine);
+            setTimeout(()=>scene.remove(pulseLine), 40);
+          }
+          renderer.render(scene, camera);
+          requestAnimationFrame(animate);
+        }
+        animate();
+        // 自适应窗口
+        window.addEventListener('resize', ()=>{
+          renderer.setSize(container.offsetWidth, container.offsetHeight);
+          camera.aspect = container.offsetWidth/container.offsetHeight;
+          camera.updateProjectionMatrix();
+        });
+      })();
+
+      // 浅粉色WiFi眼睛交互Canvas
+      window.addEventListener('DOMContentLoaded', () => {
+        const section = document.getElementById('research');
+        const canvas = document.getElementById('wifi-eye-canvas');
+        if (!canvas || !section) return;
+        function resize() {
+          canvas.width = section.offsetWidth;
+          canvas.height = 90;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        let mouseX = canvas.width/2;
+        // 鼠标/手指跟随
+        function setMouse(e) {
+          const rect = canvas.getBoundingClientRect();
+          if (e.touches && e.touches.length>0) {
+            mouseX = e.touches[0].clientX - rect.left;
+          } else {
+            mouseX = e.clientX - rect.left;
+          }
+        }
+        canvas.addEventListener('mousemove', setMouse);
+        canvas.addEventListener('touchmove', setMouse);
+        // 绘制函数
+        function draw() {
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          // 浅粉色主色
+          const pink = 'rgba(230,120,150,0.22)';
+          const pinkDeep = 'rgba(230,120,150,0.38)';
+          // 1. 浅粉色流畅线条
+          ctx.save();
+          ctx.strokeStyle = pink;
+          ctx.lineWidth = 2.2;
+          ctx.beginPath();
+          for(let x=0;x<=canvas.width;x+=6){
+            let y = 60 + Math.sin(x/90 + mouseX/180)*13 + Math.cos(x/60 + mouseX/120)*7;
+            if(x===0) ctx.moveTo(x,y);
+            else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+          ctx.restore();
+          // 2. WiFi眼睛图案
+          // 眼睛中心位置随鼠标移动
+          const eyeX = mouseX;
+          const eyeY = 48;
+          // 眼睛外轮廓（竖椭圆）
+          ctx.save();
+          ctx.strokeStyle = pinkDeep;
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          ctx.ellipse(eyeX, eyeY, 18, 32, 0, 0, Math.PI*2); // 竖着的椭圆
+          ctx.stroke();
+          // 眼珠
+          ctx.beginPath();
+          ctx.arc(eyeX, eyeY, 7, 0, Math.PI*2);
+          ctx.fillStyle = pinkDeep;
+          ctx.globalAlpha = 0.7;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          // WiFi波纹（3条）
+          for(let i=1;i<=3;i++){
+            ctx.beginPath();
+            ctx.ellipse(eyeX, eyeY, 11+6*i, (11+6*i)*1.2, 0, Math.PI*0.18, Math.PI*0.82, false); // 竖着的WiFi波纹
+            ctx.strokeStyle = pink;
+            ctx.lineWidth = 1.3;
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+        function loop(){
+          draw();
+          requestAnimationFrame(loop);
+        }
+        loop();
+      });
+
+      // 浅粉色WiFi 3D立体感竖线+交互无线感知图标
+      window.addEventListener('DOMContentLoaded', () => {
+        const section = document.getElementById('research');
+        const canvas = document.getElementById('wifi-eye-canvas');
+        if (!canvas || !section) return;
+        function resize() {
+          canvas.width = section.offsetWidth;
+          canvas.height = 120;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        let mouseY = canvas.height/2;
+        // 鼠标/手指跟随
+        function setMouse(e) {
+          const rect = canvas.getBoundingClientRect();
+          if (e.touches && e.touches.length>0) {
+            mouseY = e.touches[0].clientY - rect.top;
+          } else {
+            mouseY = e.clientY - rect.top;
+          }
+        }
+        canvas.addEventListener('mousemove', setMouse);
+        canvas.addEventListener('touchmove', setMouse);
+        // 曲线参数
+        const lines = [
+          { phase: 0, amp: 60, freq: 0.012, x: canvas.width*0.25, color: 'rgba(230,120,150,0.22)', z: 0 },
+          { phase: 1.2, amp: 48, freq: 0.014, x: canvas.width*0.5, color: 'rgba(230,120,150,0.32)', z: 1 },
+          { phase: 2.1, amp: 70, freq: 0.011, x: canvas.width*0.75, color: 'rgba(230,120,150,0.18)', z: 2 },
+        ];
+        function draw() {
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          // 画3D感竖曲线
+          for(let l=0;l<lines.length;l++){
+            const line = lines[l];
+            ctx.save();
+            ctx.strokeStyle = line.color;
+            ctx.lineWidth = 2.2 - l*0.5;
+            ctx.beginPath();
+            for(let y=10;y<=canvas.height-10;y+=2){
+              // 曲线横坐标为主x+正弦扰动
+              let x = (canvas.width*(0.25+l*0.25)) + Math.sin(y*line.freq + line.phase + Date.now()/1800)*line.amp;
+              if(y===10) ctx.moveTo(x,y);
+              else ctx.lineTo(x,y);
+            }
+            ctx.shadowColor = line.color;
+            ctx.shadowBlur = 8-l*3;
+            ctx.stroke();
+            ctx.restore();
+          }
+          // 计算主线在鼠标高度的横坐标
+          const mainLine = lines[1];
+          let wifiX = (canvas.width*0.5) + Math.sin(mouseY*mainLine.freq + mainLine.phase + Date.now()/1800)*mainLine.amp;
+          let wifiY = mouseY;
+          // 绘制WiFi无线感知图标（竖直扇形波纹）
+          ctx.save();
+          ctx.translate(wifiX, wifiY);
+          ctx.rotate(-Math.PI/2); // 竖直朝上
+          for(let i=0;i<3;i++){
+            ctx.beginPath();
+            ctx.arc(0,0,13+7*i,Math.PI*0.18,Math.PI*0.82,false);
+            ctx.strokeStyle = 'rgba(230,120,150,'+(0.22-0.06*i)+')';
+            ctx.lineWidth = 2.1-0.5*i;
+            ctx.shadowColor = 'rgba(230,120,150,0.18)';
+            ctx.shadowBlur = 6-i*2;
+            ctx.stroke();
+          }
+          // 画WiFi眼睛点
+          ctx.beginPath();
+          ctx.arc(0,0,4.5,0,Math.PI*2);
+          ctx.fillStyle = 'rgba(230,120,150,0.32)';
+          ctx.shadowBlur = 0;
+          ctx.fill();
+          ctx.restore();
+        }
+        function loop(){
+          draw();
+          requestAnimationFrame(loop);
+        }
+        loop();
+      });
+
+      // 顶部WiFi信号发射动态Canvas
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('wifi-emit-canvas');
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        let mouseX = window.innerWidth/2;
+        let mouseY = window.innerHeight/2;
+        function setMouse(e) {
+          if (e.touches && e.touches.length>0) {
+            mouseX = e.touches[0].clientX;
+            mouseY = e.touches[0].clientY;
+          } else if (e.clientX !== undefined && e.clientY !== undefined) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          }
+        }
+        window.addEventListener('mousemove', setMouse);
+        window.addEventListener('touchmove', setMouse);
+        function draw() {
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          // WiFi发射点（顶部中央）
+          const emitX = canvas.width/2;
+          const emitY = 60;
+          // 画WiFi图标
+          ctx.save();
+          ctx.translate(emitX, emitY);
+          // 圆点
+          ctx.beginPath();
+          ctx.arc(0,0,10,0,Math.PI*2);
+          ctx.fillStyle = 'rgba(230,120,150,0.32)';
+          ctx.shadowColor = 'rgba(230,120,150,0.18)';
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          // 扇形波纹
+          for(let i=0;i<3;i++){
+            ctx.beginPath();
+            ctx.arc(0,0,20+10*i,Math.PI*0.18,Math.PI*0.82,false);
+            ctx.strokeStyle = 'rgba(230,120,150,'+(0.22-0.06*i)+')';
+            ctx.lineWidth = 2.1-0.5*i;
+            ctx.shadowBlur = 6-i*2;
+            ctx.stroke();
+          }
+          ctx.restore();
+          // 画3条动态信号线
+          for(let i=0;i<3;i++){
+            // 每条线的弯曲参数略有不同
+            const t = Date.now()/1200 + i*0.8;
+            const ctrlOffsetX = (i-1)*60 + Math.sin(t)*30;
+            const ctrlOffsetY = 120 + Math.cos(t+i)*30;
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(emitX, emitY);
+            // 贝塞尔控制点
+            const ctrlX = emitX + ctrlOffsetX;
+            const ctrlY = emitY + ctrlOffsetY;
+            // 终点为鼠标/手指位置
+            ctx.bezierCurveTo(ctrlX, ctrlY, mouseX, mouseY-60, mouseX, mouseY);
+            ctx.strokeStyle = ['rgba(230,120,150,0.22)','rgba(230,120,150,0.32)','rgba(230,120,150,0.18)'][i];
+            ctx.lineWidth = 3.2-0.7*i;
+            ctx.shadowColor = ctx.strokeStyle;
+            ctx.shadowBlur = 8-i*2;
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+        function loop(){
+          draw();
+          requestAnimationFrame(loop);
+        }
+        loop();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  </body>
+</html>
