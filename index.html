@@ -189,7 +189,7 @@
           <h2 class="text-3xl font-bold text-center mb-12">团队成员</h2>
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-              <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4"></div>
+              <img src="picture/团队成员/number_1.png" alt="Zhang Daqing" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border border-gray-300" />
               <h3 class="text-xl font-semibold">Zhang Daqing</h3>
               <p class="text-gray-600">教授</p>
             </div>
@@ -1148,19 +1148,6 @@
         }
         resize();
         window.addEventListener('resize', resize);
-        let mouseX = window.innerWidth/2;
-        let mouseY = window.innerHeight/2;
-        function setMouse(e) {
-          if (e.touches && e.touches.length>0) {
-            mouseX = e.touches[0].clientX;
-            mouseY = e.touches[0].clientY;
-          } else if (e.clientX !== undefined && e.clientY !== undefined) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-          }
-        }
-        window.addEventListener('mousemove', setMouse);
-        window.addEventListener('touchmove', setMouse);
         function draw() {
           const ctx = canvas.getContext('2d');
           ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -1187,27 +1174,6 @@
             ctx.stroke();
           }
           ctx.restore();
-          // 画3条动态信号线
-          for(let i=0;i<3;i++){
-            // 每条线的弯曲参数略有不同
-            const t = Date.now()/1200 + i*0.8;
-            const ctrlOffsetX = (i-1)*60 + Math.sin(t)*30;
-            const ctrlOffsetY = 120 + Math.cos(t+i)*30;
-            ctx.save();
-            ctx.beginPath();
-            ctx.moveTo(emitX, emitY);
-            // 贝塞尔控制点
-            const ctrlX = emitX + ctrlOffsetX;
-            const ctrlY = emitY + ctrlOffsetY;
-            // 终点为鼠标/手指位置
-            ctx.bezierCurveTo(ctrlX, ctrlY, mouseX, mouseY-60, mouseX, mouseY);
-            ctx.strokeStyle = ['rgba(230,120,150,0.22)','rgba(230,120,150,0.32)','rgba(230,120,150,0.18)'][i];
-            ctx.lineWidth = 3.2-0.7*i;
-            ctx.shadowColor = ctx.strokeStyle;
-            ctx.shadowBlur = 8-i*2;
-            ctx.stroke();
-            ctx.restore();
-          }
         }
         function loop(){
           draw();
