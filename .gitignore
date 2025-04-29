@@ -1,7 +1,7 @@
 # 忽略图片文件夹
-picture/最新消息图片/*.png
-picture/最新消息图片/*.jpg
-picture/最新消息图片/*.webp
+# picture/最新消息图片/*.png
+# picture/最新消息图片/*.jpg
+# picture/最新消息图片/*.webp
 
 # macOS system files
 .DS_Store
