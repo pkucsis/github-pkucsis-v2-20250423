@@ -428,17 +428,39 @@
         "Chang 等 - 2024 - Robust respiration monitoring under body motion interference.pdf",
         "Yi 等 - BFMSense WiFi sensing using beamforming feedback matrix.pdf",
         "Zhang - 2024 - Keynote From WiFi sensing to quantum sensing toward a wireless sensing theory.pdf",
-        "Wang 等 - 2024 - Wi2DMeasure WiFi-based 2D object size measurement.pdf"
+        "Wang 等 - 2024 - Wi2DMeasure WiFi-based 2D object size measurement.pdf",
+        "Chang 等 - 2024 - MSense boosting wireless sensing capability under motion interference.pdf",
+        "Chang 等 - 2024 - Robust respiration monitoring under body motion interference.pdf",
+        "Guo 等 - 2024 - Privacy leakage from dynamic prices trip purpose mining as an example.pdf",
+        "Li 等 - 2023 - Fractal dimension of DSSS frame preamble Radiometric feature for wireless device identification-1.pdf",
+        "Li 等 - 2023 - Fractal dimension of DSSS frame preamble Radiometric feature for wireless device identification.pdf",
+        "Liu 等 - Spatio-temporal memory augmented multi-level attention network for traffic prediction-1.pdf",
+        "Ren 等 - 2024 - Characterizing the through-wall sensing mechanism of wi-fi signals with a refraction-aware fresnel z.pdf",
+        "Wang 等 - 2024 - CrowdLearning A decentralized distributed training framework based on collectives of trusted AIoT d.pdf",
+        "Wang 等 - 2024 - MultiResp Robust respiration monitoring for multiple users using acoustic signal-1.pdf",
+        "Wang 等 - 2024 - OmniResMonitor Omnimonitoring of human respiration using acoustic multipath reflection.pdf",
+        "Wang 等 - 2024 - SlpRoF improving the temporal coverage and robustness of RF-based vital sign monitoring during slee.pdf",
+        "Wang 等 - 2024 - Understanding the diffraction model in static multipath-rich environments for WiFi sensing system de-1.pdf",
+        "Wang 等 - 2024 - Wi2DMeasure WiFi-based 2D object size measurement-1.pdf",
+        "Yi 等 - BFMSense WiFi sensing using beamforming feedback matrix.pdf",
+        "Zhang - 2024 - Keynote From WiFi sensing to quantum sensing toward a wireless sensing theory.pdf",
+        "Zhang 等 - 2024 - From Single-Point to Multi-Point Reflection Modeling Robust Vital Signs Monitoring via mmWave Sensi.pdf"
       ];
 
       // Manual mapping for specific PDFs that fail automatic matching
       const manualPdfMap = {
         "Introduction to the Special Issue on Wireless Sensing for Health Monitoring and Elderly Care.": "Zhang 等 - 2025 - Introduction to the special issue on wireless sensing for health monitoring and elderly care.pdf",
+        "Embracing Distributed Acoustic Sensing in Car Cabin for Children Presence Detection.": "Su 等 - Embracing distributed acoustic sensing in car cabin for children presence detection.pdf",
+        "CrowdBot: An Open-Environment Robot Management System for On-Campus Services.": "Wang 等 - 2024 - CrowdBot an open-environment robot management system for on-campus services.pdf",
+        "MmECare: Enabling Fine-grained Vital Sign Monitoring for Emergency Care with Handheld MmWave Radars.": "Chang和Zhang - MmECare Enabling fine-grained vital sign monitoring for emergency care with handheld MmWave radars.pdf",
+        "WiCGesture: Meta-Motion-Based Continuous Gesture Recognition With Wi-Fi.": "Gao 等 - WiCGesture meta-motion-based continuous gesture recognition with wi-fi.pdf",
+        "Spatio-Temporal Memory Augmented Multi-Level Attention Network for Traffic Prediction.": "Liu 等 - Spatio-temporal memory augmented multi-level attention network for traffic prediction.pdf",
         "WiLife: Long-Term Daily Status Monitoring and Habit Mining of the Elderly Leveraging Ubiquitous Wi-Fi Signals.": "Li 等 - 2025 - WiLife long-term daily status monitoring and habit mining of the elderly leveraging ubiquitous wi-f.pdf",
         "Multi-Person Respiration Monitoring Leveraging Commodity Wi-Fi Devices.": "Yi 等 - 2025 - Multi-person respiration monitoring leveraging commodity wi-fi devices.pdf",
         "SigCan: Toward Reliable ToF Estimation Leveraging Multipath Signal Cancellation on Commodity WiFi Devices.": "Li 等 - 2025 - SigCan Toward reliable ToF estimation leveraging multipath signal cancellation on commodity WiFi de.pdf",
         "FinerSense: A Fine-Grained Respiration Sensing System Based on Precise Separation of Wi-Fi Signals.": "Song 等 - 2025 - FinerSense a fine-grained respiration sensing system based on precise separation of wi-fi signals.pdf",
-        "WiCross: Indoor Human Zone-Crossing Detection Using Commodity WiFi Devices.": "Shi 等 - 2023 - WiCross Indoor human zone-crossing detection using commodity WiFi devices.pdf"
+        "WiCross: Indoor Human Zone-Crossing Detection Using Commodity WiFi Devices.": "Shi 等 - 2023 - WiCross Indoor human zone-crossing detection using commodity WiFi devices.pdf",
+        "BFMSense: WiFi Sensing Using Beamforming Feedback Matrix.": "Yi 等 - BFMSense WiFi sensing using beamforming feedback matrix.pdf"
         // 其他论文...
       };
 
@@ -565,15 +587,9 @@
           venue.textContent = `${venueString}, ${pub.year}`; // Add comma before year
           pubDiv.appendChild(venue);
 
-          // Add contribution placeholder
-          const contributionPlaceholder = document.createElement('p');
-          contributionPlaceholder.className = 'text-sm text-gray-500 mt-2 italic';
-          contributionPlaceholder.textContent = '[请根据原文摘要或内容在此处手动添加独特贡献描述]';
-          pubDiv.appendChild(contributionPlaceholder);
-
           // Add DOI link/button OR PDF download button
           const buttonWrapper = document.createElement('div');
-          buttonWrapper.className = 'text-right mt-1';
+          buttonWrapper.className = 'flex items-center mt-1';
 
           const matchedPdf = findMatchingPdf(pub, localPdfFiles);
 
@@ -596,8 +612,155 @@
             buttonWrapper.appendChild(link);
           }
 
-          if (buttonWrapper.hasChildNodes()) { // Only add the wrapper if it contains a button
-              pubDiv.appendChild(buttonWrapper);
+          pubDiv.insertBefore(buttonWrapper, pubDiv.firstChild);
+
+          // 贡献描述映射
+          const contributionMap = {
+            "Robust Respiration Monitoring Under Body Motion Interference.": [
+              "提出一种缓解身体运动对非接触式呼吸监测影响的创新方案，通过新型信号处理技术，先估算人体运动，再从胸部反射信号中消除运动干扰，有效提升监测稳定性。",
+              "In this demo, we present a solution to mitigate the impact of body motion on contactless respiration monitoring. By employing novel signal processing techniques, body motion can be first estimated and subsequently eliminated from the signal reflected signal by the chest."
+            ],
+            "MSense: Boosting Wireless Sensing Capability Under Motion Interference.": [
+              "MSense 作为通用解决方案，将设备运动与人体运动干扰因素纳入统一建模，通过纯信号处理手段消除干扰，推动无线传感技术向实际应用场景的实质性跨越。",
+              "In this paper, we propose MSense, a general solution to deal with motion interference from wireless device and/or human body, moving wireless sensing one step forward towards real-life adoption. We establish the sensing model by taking both device motion and interfering body motion into consideration."
+            ],
+            "WiCGesture: Meta-Motion-Based Continuous Gesture Recognition With Wi-Fi.": [
+              "WiCGesture 率先实现基于 WiFi 信号的连续手势识别，借助独创的元运动特征描述与回溯搜索算法，打破传统单手势识别局限，实现自然连续手势的精准捕捉与解析。",
+              "WiCGesture is the ﬁrst system engaging in continuous gesture recognition using Wi-Fi signals. Leveraging this feature, we use a back-tracking searching-based algorithm to identify gestures from the sequence of meta motions."
+            ],
+            "Privacy Leakage From Dynamic Prices: Trip Purpose Mining as an Example.": [
+              "以网约车服务行程目的挖掘为切入点，开创性地研究动态价格机制下的隐私泄露问题，通过真实大规模数据集分析，为同类服务的隐私保护研究提供重要范例与理论支撑。",
+              "In this paper, we aim to study this possibility and choose trip purpose mining in RoD service as an attack example, based on real-world large datasets. Our hope is that the study not only serves as a case study demonstrating the privacy leakage problem in RoD service, but also sheds light on such privacy problem in other services using dynamic prices and triggers more research efforts."
+            ],
+            "WiLife: Long-Term Daily Status Monitoring and Habit Mining of the Elderly Leveraging Ubiquitous Wi-Fi Signals.": [
+              "WiLife 构建了一套全新的 WiFi 监测框架，通过空间功能分区与日常活动原子化分类，以独特的三元组数据格式，实现对老年人日常状态的长期、连续、精准监测与生活习惯挖掘。",
+              "This work introduces 'WiLife,' a cutting-edge Wi-Fi-based framework for continuous monitoring of the elderly's spatio-temporal daily status information. Specifically, WiLife adopts a strategy of partitioning living spaces into functional areas and categorizing daily activities into atomic states. By encapsulating daily life status into a unique series of triple unit format: (Time, Area, State)."
+            ],
+            "WiFi-CSI Difference Paradigm: Achieving Efficient Doppler Speed Estimation for Passive Tracking.": [
+              "深度挖掘 WiFi CSI 差值在多普勒速度估计中的潜力，突破传统仅依赖相位信息的局限，创新性融合相位与幅度数据，以更少样本实现更高精度的被动目标速度监测。",
+              "In this paper, we provide the first deep dive into the potential of CSI difference for fine-grained Doppler speed estimation. Theoretically, our new design allows us to estimate Doppler speed with just three samples. While conventional methods only adopt phase information for Doppler estimation, we creatively fuse both phase and amplitude information to improve Doppler estimation accuracy."
+            ],
+            "Fractal Dimension of DSSS Frame Preamble: Radiometric Feature for Wireless Device Identification.": [
+              "首次揭示直接序列扩频（DSSS）帧前导码的分形维数可作为新型辐射特征，与现有特征相结合，显著提升无线设备识别的准确性与可靠性。",
+              "This paper demonstrates that the fractal dimension of frame preamble serves as a new radiometric feature that can be used together with other known radiometric features to enhance the identiﬁcation accuracy in wireless device identiﬁcation."
+            ],
+            "SigCan: Toward Reliable ToF Estimation Leveraging Multipath Signal Cancellation on Commodity WiFi Devices.": [
+              "提出基于相位差的 ToF 估计新方法，巧妙利用信号抵消原理，有效抑制多径效应与噪声干扰，在商用 WiFi 设备上实现高精度的飞行时间测量与距离检测。",
+              "In this paper, we propose a phase difference based method for ToF estimation and uncover the potential of signal cancellation to mitigate the impact of multipath and noise on phase differences among subcarriers."
+            ],
+            "DiverSense: Maximizing Wi-Fi Sensing Range Leveraging Signal Diversity.": [
+              "DiverSense 另辟蹊径，充分挖掘 WiFi 硬件的信号多样性，通过多载波与多天线信号融合及时间分集对齐算法，将传感范围提升至 40 米，突破传统 WiFi 传感距离瓶颈。",
+              "This paper picks a different direction and proposes to enhance the quality of the sensing signal by fully exploiting the signal diversity provided by the Wi-Fi hardware. We propose DiverSense, a system that combines sensing signal received from all subcarriers and all antennas in the array, to fully utilize the spatial and frequency diversity."
+            ],
+            "Spatio-Temporal Memory Augmented Multi-Level Attention Network for Traffic Prediction.": [
+              "构建时空记忆增强的多层注意力网络 ST-MAN，创新实现对不同时空尺度下短期局部与长期全局依赖关系的显式建模，为交通流量的精准预测提供了全新技术路径。",
+              "To solve these issues, we propose a spatio-temporal memory augmented multi-level attention network for ﬁne-grained trafﬁc prediction, entitled ST-MAN. Then, we propose a multi-level attention network to explicitly model both short-term local spatio-temporal dependencies and long-term global spatiotemporal dependencies at different spatial scales (i.e., grid and region levels) and temporal scales (i.e., daily and weekly levels)."
+            ],
+            "Characterizing the Through-Wall Sensing Mechanism of Wi-Fi Signals With a Refraction-Aware Fresnel Zone Model.": [
+              "构建首个考虑信号折射与反射的穿墙无线传感模型 —— 折射感知菲涅尔区模型，揭示非视距场景下 WiFi 信号传播与传感机制，为穿墙监测应用奠定理论基础。",
+              "To bridge this gap, we put forward a through-wall wireless sensing model to reveal the sensing mechanism of Wi-Fi signals in NLoS scenarios. In particular, a refraction-aware Fresnel zone model is developed by taking into account both the reﬂection propagation and the refraction propagation of Wi-Fi signals."
+            ],
+            "WiCross: Indoor Human Zone-Crossing Detection Using Commodity WiFi Devices.": [
+              "WiCross 系统凭借 WiFi 信号相位统计特性，精准区分目标折返与穿越行为，实现对室内人员区域穿越状态的可靠检测，有效降低误报率。",
+              "In this paper, we propose WiCross, which can accurately distinguish the turn-back behavior with the phase statistics pattern of WiFi signals and thus robustly identify whether the target crosses the area between the WiFi transceiver pair."
+            ],
+            "FinerSense: A Fine-Grained Respiration Sensing System Based on Precise Separation of Wi-Fi Signals.": [
+              "FinerSense 基于优化的信号分离模型，将复合信号精准分解为静态与动态分量，完整保留目标运动细节，实现呼吸率、深度等关键参数的高精度实时监测。",
+              "To overcome the robustness limitation associated with using a composite signal for wireless sensing, we introduce an optimization-based signal separation model. This model effectively disentangles composite signals into static and dynamic components, while preserving the intricate details of target movements or activities."
+            ],
+            "Embracing Distributed Acoustic Sensing in Car Cabin for Children Presence Detection.": [
+              "开创分布式声学传感在车厢环境的应用，利用车内多扬声器与麦克风阵列及复杂多径特性，实现对儿童存在状态的无死角、高可靠性检测。",
+              "In this paper, we envision an exciting new acoustic sensing platform, i.e., car cabin which is inherently embedded with a large number of speakers and microphones. We propose the new concept of distributed acoustic sensing and develop novel designs leveraging the unique characteristics of rich multi-path in car cabin to enable fine-grained sensing even when the primary reflection is totally blocked."
+            ],
+            "SlpRoF: Improving the Temporal Coverage and Robustness of RF-Based Vital Sign Monitoring During Sleep.": [
+              "SlpRoF 系统通过对睡眠状态的精细分类，结合高阶谐波分析与空间分集技术，同步提升睡眠期生命体征监测的时间覆盖率与数据准确性，填补相关技术空白。",
+              "In this work, we develop SlpRoF, a low-cost contact-free system using a commercial-off-the-shelf UWB radar that achieves high temporal coverage and high accuracy in vital sign monitoring during sleep. By classifying body states into the motionless state, limb movement state, and torso movement state, and extracting vital signs during the ﬁrst two states, it directly increases effective reporting periods over nights."
+            ],
+            "MultiResp: Robust Respiration Monitoring for Multiple Users Using Acoustic Signal.": [
+              "MultiResp 利用声学信号间接反射特性，通过提取细粒度呼吸率与相位差，实现多用户呼吸信号的有效分离与动态人数识别，突破传统技术在多人场景下的应用瓶颈。",
+              "To overcome these limitations, in this paper we propose MultiResp, a multi-user respiration monitoring system using acoustic signal. By fully leveraging the abundant acoustic signals reﬂected indirectly from subjects' chest, MultiResp can robustly capture chest movement even when they face away from the transceiver or are blocked. By extracting ﬁne-grained breath rate and phase difference between different subjects, MultiResp can separate the breath waves with the same or similar rates and adapt to dynamic change of subject number during monitoring."
+            ],
+            "AudioGuard: Omnidirectional Indoor Intrusion Detection Using Audio Device.": [
+              "AudioGuard 仅依赖一对音频设备，通过捕捉入侵行为引发的多普勒频移特征，并采用周期性极化算法消除环境干扰，实现全向、无死角的室内入侵检测。",
+              "In this article, we design and implement an omnidirectional indoor intrusion detection system, named AudioGuard, using only a pair of speaker and microphone. We hence capture periodical Doppler shift caused by intruder's walking motion to detect intrusion. Specifically, we first extract the Doppler shift embedded in echo signals, and we then propose a periodicity polarization method to cancel out the impact of the change of radial angle and the distance on periodicity of Doppler shift."
+            ],
+            "WiMeasure: Millimeter-Level Object Size Measurement with Commodity WiFi Devices.": [
+              "突破低频 WiFi 信号限制，通过建立物体运动奇异点与尺寸的数学关系，在商用设备上首次实现毫米级精度的物体尺寸测量，拓展 WiFi 传感应用边界。",
+              "In this work, we model the relationship between the object size and the number of singularities when an object moves near the LoS path, which lays the theoretical foundation for the proposed system to work. By addressing multiple challenges, for the first time, we make WiFi-based object size measurement work on commodity WiFi cards and achieve a surprisingly low median error of 2.6 mm."
+            ],
+            "Wi2DMeasure: WiFi-Based 2D Object Size Measurement.": [
+              "首次提出使用广泛存在于新一代 WiFi 卡上的波束成形反馈信息（BFI），通过单个收发器对实现物体二维尺寸精确测量的方法。该方法建立了 BFI 与 CSI 的数学关系，解决了 BFI 数据处理中的诸多挑战，实验结果显示其测量二维尺寸的中值误差仅为 3.7mm。",
+              "In this work, we propose to employ a new channel data, i.e., Beamforming Feedback Information (BFI), widely available on almost all new generation WiFi cards for fine-grained size measurement. We propose a novel method to accurately measure the two-dimensional size of an object using a single transceiver pair by identifying the positions of singularities when the object passes through the diffraction zone of the transceiver pair. Experiment results show that Wi2DMeasure can accurately measure the two-dimensional size of objects under various conditions, achieving a small median error of only 3.7 mm."
+            ],
+            "Understanding the Diffraction Model in Static Multipath-Rich Environments for WiFi Sensing System Design.": [
+              "建立精确的衍射区传感模型，深入分析 CSI 信号与目标运动关系，提出基于相对变化模式的静态多径消除策略，显著提升复杂环境下 WiFi 传感系统性能。",
+              "In this work, we develop an accurate diffraction model to characterize the relationship between both CSI amplitude and phase and target's movement in the diffraction zone. We further put forward the deformation forms of the model under static multipath conditions and ﬁnd that the CSI patterns vary signiﬁcantly with multipath. Consequently, we propose to extract a relative change pattern from CSI signals to recover the one-to-one mapping relations and eliminate the impact of static multipath."
+            ],
+            "CrowdBot: An Open-Environment Robot Management System for On-Campus Services.": [
+              "CrowdBot 整合分层强化学习云边协同框架与数字孪生技术，实现校园服务机器人的高效任务调度与动态管理，大幅提升服务响应速度与资源利用率。",
+              "To overcome these limitations, we introduce CrowdBot, a robot management system that enhances service in campus environments. Our system leverages a hierarchical reinforcement learning-based cloud-edge hybrid scheduling framework (REDIS), for efficient online streaming task assignment and dynamic action scheduling. To verify the REDIS framework, we have developed a digital twin simulation platform, which integrates large language models and hot-swapping technology."
+            ],
+            "CrowdLearning: A Decentralized Distributed Training Framework Based on Collectives of Trusted AIoT Devices.": [
+              "CrowdLearning 基于可信 AIoT 设备集群，通过异构资源感知任务卸载与高效通信数据重分配机制，有效解决传统训练模式的效率瓶颈与隐私难题。",
+              "We propose CrowdLearning, a decentralized distributed training framework based on trusted AIoT device collectives. This framework comprises two collaborative modules: A heterogeneous resource-aware task ofﬂoading module aimed at alleviating training latency bottlenecks, and an efﬁcient communication data reallocation module responsible for determining the timing, manner, and recipients of data transmission, thereby enhancing DNN training efﬁciency and effectiveness."
+            ],
+            "WiProfile: Unlocking Diffraction Effects for Sub-Centimeter Target Profiling Using Commodity WiFi Devices.": [
+              "WiProfile 借助 WiFi 信号衍射特性，构建 CSI-Profile 模型并优化天线布局策略，实现亚厘米级目标轮廓的精准重建，为非接触式目标成像提供新方向。",
+              "In this paper, motivated by the observation that the diffracted signals around an object between two WiFi devices carry the contour information of the object, we formulate the problem of reconstructing the 2D target profile and develop WiProfile, the first WiFi-based system that unlocks the diffraction effects for target profiling."
+            ],
+            "BFMSense: WiFi Sensing Using Beamforming Feedback Matrix.": [
+              "首次建立波束成形反馈矩阵（BFM）与 CSI 的理论联系，证明 BFM 用于细粒度传感的可行性，推动 WiFi 传感技术在更多商用设备上的广泛应用。",
+              "In this paper, we propose to leverage this new BFM information for WiFi sensing. Through establishing the relationship between BFM and CSI, we lay the theoretical foundations for BFM-based WiFi sensing for the first time."
+            ],
+            "Multi-Person Respiration Monitoring Leveraging Commodity Wi-Fi Devices.": [
+              "WiMUSE 作为时域创新方法，将多人呼吸混合信号转化为盲源分离问题，实现呼吸波形精准分离与个体识别，相比传统频域方法显著提升监测准确性。",
+              "Essentially, as a pioneering time domain approach, WiMUSE models the mixed signals of multi-person respiration as a linear superposition of multiple waveforms, so as to form a blind source separation (BSS) problem."
+            ],
+            "From Single-Point to Multi-Point Reflection Modeling: Robust Vital Signs Monitoring via mmWave Sensing.": [
+              "提出多点反射模型与频率分集算法，解释毫米波信号信噪比波动根源，有效增强生命体征监测的抗干扰能力，适用于长期健康追踪场景。",
+              "To tackle this, we introduce a multi-point reﬂection model to understand the underlying causes of SNR ﬂuctuations and propose a frequency diversity based algorithm to enhance sensing SNR."
+            ],
+            "Wi-Diag: Robust Multisubject Abnormal Gait Diagnosis With Commodity Wi-Fi.": [
+              "Wi-Diag 基于商用 WiFi 实现多主体异常步态的稳健诊断，为群体健康监测与疾病早期筛查提供低成本、非侵入式的技术手段。",
+              "Wi-Diag: Robust Multisubject Abnormal Gait Diagnosis With Commodity Wi-Fi aims to achieve robust multisubject abnormal gait diagnosis, which provides a new approach for health monitoring."
+            ],
+            "Keynote: From WiFi Sensing to Quantum Sensing: Toward a Wireless Sensing Theory.": [
+              "独特性地提出将菲涅尔区模型作为 WiFi/4G/5G 信号无设备和非接触式人体传感的通用理论基础，并定义传感信噪比（SSNR）来衡量传感极限等指标，还开发了世界首个里德堡量子传感系统，相比传统传感系统性能显著提升。",
+              "In this talk, I will first introduce the Fresnel zone model as a generic theoretic basis for device-free and contactless human sensing with WiFi/4G/5G signals. Then we propose to define the Sensing Signal to Noise Ratio (SSNR) as a new metric to inform the sensing limit, sensing boundary and sensing signal quality of WiFi/4G/5G-based human sensing systems. In order to further increase SSNR and push the wireless sensing limit, we explore the Rydberg theory and develop the world first Rydberg quantum sensing system which senses tiny variations of RF signals caused by human activities, showing significant performance increase compared to WiFi or Radar based sensing systems."
+            ],
+            "OmniResMonitor: Omnimonitoring of Human Respiration using Acoustic Multipath Reflection.": [
+              "设计并实现了 OmniResMonitor 系统，首次利用室内环境中的声学多径反射，通过一对扬声器和麦克风实现对单目标呼吸的全方位监测，解决了在无直接反射信号场景下的呼吸监测难题。",
+              "In this paper, we design and implement a novel omnimonitoring system for human respiration, OmniRespMonitor, using a pair of speaker and microphone. Different from Radio Frequency (RF) signal, acoustic signals cannot penetrate through walls and furniture. We can therefore monitor the target's respiration by extracting this subtle variation of indirectly reflected signals."
+            ],
+            "Sensing in Bistatic ISAC Systems With Clock Asynchronism: A signal processing perspective.": [
+              "在双基地 ISAC 系统背景下，全面探讨了时钟不同步问题及现有解决技术，提出了一个二维框架，为未来研究指明方向，首次从信号处理角度对该领域进行系统梳理。",
+              "This article provides an overview of the issue and existing techniques developed in an ISAC background. Based on the review and comparison, we also draw insights into the future research directions and open problems, aiming to nurture the maturation of bistatic sensing in ISAC."
+            ],
+            "MmECare: Enabling Fine-grained Vital Sign Monitoring for Emergency Care with Handheld MmWave Radars.": [
+              "提出一种利用两个静态角反射器精确估计设备运动方向的新方法，首次实现了在设备运动情况下，使用手持毫米波雷达同时对呼吸和心跳进行细粒度监测，显著提高了紧急医疗中生命体征监测的准确性和可行性。",
+              "In this paper, we first demonstrate that the key to mitigating the effects of device motion lies in accurately estimating the motion direction. We then introduce a novel method that uses two static objects, i.e., corner reflectors, to precisely estimate the random motion direction of the device. Comprehensive experiments validate the effectiveness of our solution using mmWave radar. Real-world tests demonstrate that our system can accurately monitor both respiration and heartbeat with handheld devices."
+            ],
+            "Introduction to the Special Issue on Wireless Sensing for Health Monitoring and Elderly Care.": [
+              "本特刊聚焦无线传感在健康监测和老年护理领域的应用，首次集合多篇研究展示该领域的最新进展，涵盖从日常生活监测到康复支持等多个方面，凸显无线传感在医疗保健中的变革潜力。",
+              "This special issue is dedicated to original research that highlights the potential of wireless sensing to improve the quality of care and enhance the well-being of elderly and vulnerable individuals. This compilation of research articles reflects the latest advancements and ongoing discussions in the field."
+            ],
+            "Wi2DMeasure: WiFi-based 2D Object Size Measurement.": [
+              "首次提出使用广泛存在于新一代 WiFi 卡上的波束成形反馈信息（BFI），通过单个收发器对实现物体二维尺寸精确测量的方法。该方法建立了 BFI 与 CSI 的数学关系，解决了 BFI 数据处理中的诸多挑战，实验结果显示其测量二维尺寸的中值误差仅为 3.7mm。",
+              "In this work, we propose to employ a new channel data, i.e., Beamforming Feedback Information (BFI), widely available on almost all new generation WiFi cards for fine-grained size measurement. We propose a novel method to accurately measure the two-dimensional size of an object using a single transceiver pair by identifying the positions of singularities when the object passes through the diffraction zone of the transceiver pair. Experiment results show that Wi2DMeasure can accurately measure the two-dimensional size of objects under various conditions, achieving a small median error of only 3.7 mm."
+            ],
+            "Sensing in Bistatic ISAC Systems With Clock Asynchronism: A signal processing perspective [Special Issue on Signal Processing for the Integrated Sensing and Communications Revolution].": [
+              "在双基地 ISAC 系统背景下，全面探讨了时钟不同步问题及现有解决技术，提出了一个二维框架，为未来研究指明方向，首次从信号处理角度对该领域进行系统梳理。",
+              "This article provides an overview of the issue and existing techniques developed in an ISAC background. Based on the review and comparison, we also draw insights into the future research directions and open problems, aiming to nurture the maturation of bistatic sensing in ISAC."
+            ]
+          };
+          if (contributionMap[pub.title]) {
+            const descArr = contributionMap[pub.title];
+            if (Array.isArray(descArr)) {
+              const contribution = document.createElement('p');
+              contribution.className = 'text-sm text-gray-700 mb-1';
+              contribution.textContent = descArr.join(' ');
+              pubDiv.appendChild(contribution);
+            }
           }
 
           fragment.appendChild(pubDiv);
