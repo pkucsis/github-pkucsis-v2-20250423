@@ -110,7 +110,7 @@
           </div>
         </div>
         <!-- 最新消息图片轮播（显示3张，随机切换） -->
-        <div id="news-carousel" class="w-full max-w-7xl mx-auto mt-10 overflow-hidden rounded-lg shadow-md relative" style="height:240px;">
+        <div id="news-carousel" class="w-full max-w-7xl mx-auto mt-4 sm:mt-10 overflow-hidden rounded-lg shadow-md relative" style="height:auto;min-height:120px;max-height:260px;">
           <div id="carousel-track" class="flex transition-all duration-700 ease-in-out h-full w-full justify-between items-center">
             <!-- 图片将由JS动态插入 -->
           </div>
@@ -135,7 +135,7 @@
           for(let i=0;i<3;i++) {
             const img = document.createElement('img');
             img.src = newsImages[currentIdx[i]];
-            img.className = 'object-contain w-full h-full max-h-full rounded-lg flex-shrink-0 bg-white mx-2';
+            img.className = 'object-cover w-full h-[180px] sm:h-[220px] md:h-[240px] rounded-lg flex-shrink-0 bg-white mx-2';
             img.style.maxWidth = '32%';
             img.style.minWidth = '0';
             img.style.border = '2px solid #e5e7eb';
